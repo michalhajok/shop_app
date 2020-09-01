@@ -1,0 +1,8 @@
+const ADD_TO_BASKET = "ADD_TO_BASKET"
+const DELETE_FROM_BASKET = "DELETE_FROM_BASKET"
+
+
+export default {
+    ADD_TO_BASKET,
+    DELETE_FROM_BASKET
+}
