@@ -1,0 +1,11 @@
+const LOGIN_FAILED = "LOGIN_FAILED"
+const LOGIN_SUCCESS = "LOGIN_SUCCESS"
+const LOGIN_FETCH = "LOGIN_FETCH"
+const LOG_OUT = "LOG_OUT"
+
+export default {
+    LOGIN_FAILED,
+    LOGIN_SUCCESS,
+    LOGIN_FETCH,
+    LOG_OUT
+}
