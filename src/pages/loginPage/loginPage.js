@@ -1,13 +1,17 @@
 import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
+
+import Nav from "../../components/organisms/nav";
 
 library.add(faUser, faLock);
 
 const LoginPage = () => {
   return (
     <div className="loginPage">
+      <Nav />
       <form className="loginPage__form" onSubmit={() => {}}>
         <label>
           <FontAwesomeIcon icon={faUser} />
@@ -24,4 +28,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
- 
