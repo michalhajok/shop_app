@@ -1,0 +1,18 @@
+.dropdown{
+    position: relative;
+
+    .dropdown__content{
+        display: none;
+        position: absolute;
+    }
+
+    .content__link{
+        flex-basis: 100%;
+        padding: 1em 0 1em 0;
+    }
+    
+}
+.dropdown:hover .dropdown__content{
+    display: flex;
+    flex-wrap: wrap;
+}
