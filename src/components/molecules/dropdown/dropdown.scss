@@ -1,18 +1,36 @@
+@import '../../../base';
+
 .dropdown{
     position: relative;
+
+    .dropdown__title{
+        padding: 1em 1.5em;
+    }
+    .dropdown__title:hover{
+        background-color: #4834d4;
+        color: $light;
+    }
 
     .dropdown__content{
         display: none;
         position: absolute;
+        background-color: $light;
     }
 
     .content__link{
+        text-align: center;
+        padding: 1em 0;
         flex-basis: 100%;
-        padding: 1em 0 1em 0;
+
     }
     
+    .content__link:hover{
+        background-color: #4834d4;
+        color: $light;
+    }
 }
 .dropdown:hover .dropdown__content{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }

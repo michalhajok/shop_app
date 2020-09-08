@@ -15,16 +15,20 @@ const Nav = () => {
   const clothesLink = "/shopApp/products/";
 
   const shoes = ["Sneakers", "Elegants"];
-  const clothes = ["T-shirts", "Shirts", "Hoodies", "Trousers"];
+  const clothes = ["T-shirt", "Shirt", "Hoodie", "Trouser"];
 
   return (
     <nav className="navbar">
       <ul className="navbar__nav" >
         <Link className="nav__link" to="/shopApp">Home</Link>
-        <Dropdown className="nav__link"  to={clothesLink} list={clothes} title="Clothes" />
-        <Dropdown className="nav__link" to={shoesLink} list={shoes} title="Shoes" />
+        <Dropdown to={clothesLink} list={clothes} title="Clothes" />
+        <Dropdown to={shoesLink} list={shoes} title="Shoes" />
       </ul>
-      <div>{auth ? <SignOut /> : <SignIn />}</div>
+      <div className="navbar__rest">
+        <div className="nav__link">
+        {auth ? <SignOut /> : <SignIn />}
+        </div>
+      </div>
     </nav>
   );
 };

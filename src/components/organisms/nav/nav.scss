@@ -1,12 +1,29 @@
+@import '../../../base';
+
 .navbar{
     display: flex;
-    justify-content: space-around;
+    background-color: $light;
 
     .navbar__nav{
+        flex-basis: 70%;
+        justify-self: start;
         display: flex;
     }
 
+    .navbar__rest{
+        justify-self: end;
+    }
+
     .nav__link{
-        padding: 1em;
+        padding: 1em 1.5em;
+    }
+
+    .nav__link:hover {
+        background-color: $purple;
+        color: $light;
+    }
+
+    a{
+        color: $purple;
     }
 }

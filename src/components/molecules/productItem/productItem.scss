@@ -1,0 +1,21 @@
+@import '../../../base';
+
+.productItem {
+    flex-basis: 46%;
+    margin: 2%;
+    font-size: 14px;
+
+    .productItem__image{
+
+        img{
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 700px){
+    .productItem{
+        flex-basis: 23%;
+        margin: 1%;
+    }
+}

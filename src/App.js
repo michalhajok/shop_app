@@ -1,7 +1,7 @@
 import React from "react";
 
 import { BrowserRouter, Switch } from "react-router-dom";
-import { PrivateRoute, PublicRoute } from "./routes";
+import { PublicRoute } from "./routes";
 
 import HomePage from "./pages/homePage";
 import LoginPage from "./pages/loginPage";
@@ -10,10 +10,11 @@ import ProductsPage from "./pages/productsPage";
 import "./App.scss";
 
 function App() {
+
   return (
-    <BrowserRouter className="App">
+    <BrowserRouter className="App" >
       <Switch>
-        <PublicRoute restricted={false} path="/shopApp/" component={HomePage} />
+        <PublicRoute exact restricted={false} path="/shopApp/" component={HomePage} />
         <PublicRoute
           restricted={false}
           path="/shopApp/login"

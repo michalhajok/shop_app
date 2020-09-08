@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import productActions from "../../redux/products/actions";
 
 import Nav from "../../components/organisms/nav";
+import ProductList from "../../components/organisms/productList";
 
 const ProductsPage = () => {
   const params = useParams();
-  const products = useSelector((state) => state.products.products);
+  const reducer = useSelector((state) => state.products);
+  const { products, isLoading } = reducer;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(productActions.fetchProducts(params.category));
+  }, [dispatch, params.category]);
 
   return (
     <div>
       <Nav />
-      {products.map((product) => (
-        <div key={product?._id}>{product?.title}</div>
-      ))}
+      <div>
+        {isLoading ? (
+          <div>Loading ...</div>
+        ) : (
+          <ProductList products={products} />
+        )}
+      </div>
     </div>
   );
 };

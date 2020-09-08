@@ -7,7 +7,7 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
 
   return (
     <Route
-      exact
+      
       {...rest}
       render={(props) =>
         auth ? <Component {...props} /> : <Redirect to="/signin" />
@@ -16,12 +16,12 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
   );
 };
 
-export const PublicRoute = ({ component: Component, restricted, ...rest }) => {
+export const PublicRoute = ({ component: Component, exact, restricted, ...rest }) => {
   const auth = useSelector((state) => state.auth.isAuth);
 
   return (
     <Route
-      exact
+      exact={exact}
       {...rest}
       render={(props) =>
         auth && restricted ? (
