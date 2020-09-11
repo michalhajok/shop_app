@@ -1,0 +1,13 @@
+@import '../../../base';
+
+.footer{
+    background-color: $light;
+    text-align: center;
+    padding: 1em;
+    width: 100%;
+    position: absolute;
+
+    a{
+        color: black;
+    }
+}

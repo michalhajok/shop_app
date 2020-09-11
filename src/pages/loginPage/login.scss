@@ -64,9 +64,7 @@
             input::placeholder {
                 color:  wheat;
                 opacity: 0.7;
-            }
-
-            
+            } 
         }
 
         .form--loginInput:focus-within {
@@ -83,9 +81,23 @@
             border: 2px solid $green;
         }
 
+        .loginPage--register {
+
+            a{
+                display: block;
+                color: white;
+                width: 100%;
+            }
+        }
+
         button:hover {
             border-color: $hover;
         }
+    }
+
+    .footer{
+        bottom: 0;
+        grid-column: 1/4;
     }
 }
 

@@ -6,6 +6,7 @@ import productActions from "../../redux/products/actions";
 
 import Nav from "../../components/organisms/nav";
 import ProductList from "../../components/organisms/productList";
+import Footer from "../../components/organisms/footer";
 
 const ProductsPage = () => {
   const params = useParams();
@@ -27,6 +28,7 @@ const ProductsPage = () => {
           <ProductList products={products} />
         )}
       </div>
+      <Footer />
     </div>
   );
 };

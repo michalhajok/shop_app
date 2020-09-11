@@ -25,9 +25,7 @@ const Nav = () => {
         <Dropdown to={shoesLink} list={shoes} title="Shoes" />
       </ul>
       <div className="navbar__rest">
-        <div className="nav__link">
-        {auth ? <SignOut /> : <SignIn />}
-        </div>
+        {auth ? <SignOut /> : <SignIn className="nav__link" />}
       </div>
     </nav>
   );

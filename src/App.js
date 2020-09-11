@@ -6,24 +6,44 @@ import { PublicRoute } from "./routes";
 import HomePage from "./pages/homePage";
 import LoginPage from "./pages/loginPage";
 import ProductsPage from "./pages/productsPage";
+import RegisterPage from "./pages/registerPage";
+import ItemPage from "./pages/itemPage";
 
 import "./App.scss";
 
 function App() {
-
   return (
-    <BrowserRouter className="App" >
-      <Switch>
-        <PublicRoute exact restricted={false} path="/shopApp/" component={HomePage} />
+    <BrowserRouter>
+      <Switch className="App">
         <PublicRoute
+          exact
+          restricted={false}
+          path="/shopApp/"
+          component={HomePage}
+        />
+        <PublicRoute
+          exact
           restricted={false}
           path="/shopApp/login"
           component={LoginPage}
         />
         <PublicRoute
+          exact
           restricted={true}
           path="/shopApp/products/:category"
           component={ProductsPage}
+        />
+        <PublicRoute
+          exact
+          restricted={true}
+          path="/shopApp/register"
+          component={RegisterPage}
+        />
+        <PublicRoute
+          exact
+          restricted={false}
+          path="/shopApp/products/:category/:_id"
+          component={ItemPage}
         />
       </Switch>
     </BrowserRouter>

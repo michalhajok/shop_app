@@ -1,10 +1,12 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 
 import Nav from "../../components/organisms/nav";
+import Footer from '../../components/organisms/footer'
 import "./login.scss";
 
 library.add(faUser, faLock);
@@ -26,7 +28,11 @@ const LoginPage = () => {
           <input type="password" placeholder="Password" />
         </label>
         <button type="submit">Sign in</button>
+        <button className="loginPage--register">
+          <Link to="/shopApp/register">Register</Link>
+        </button>
       </form>
+      <Footer />
     </div>
   );
 };

@@ -1,12 +1,16 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 import "./productItem.scss";
 
 const ProductItem = ({ product }) => {
-  const { title, brand, price, picture } = product;
-
+  const { _id, title, brand, price, picture } = product;
+  const params = useParams();
   return (
-    <div className="productItem">
+    <Link
+      to={`/shopApp/products/${params.category}/${_id}`}
+      className="productItem"
+    >
       <figure className="productItem__image">
         <img src={picture[0]} alt="img" />
       </figure>
@@ -19,7 +23,7 @@ const ProductItem = ({ product }) => {
           <p>{price} zł</p>
         </section>
       </div>
-    </div>
+    </Link>
   );
 };
 
