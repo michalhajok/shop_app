@@ -8,7 +8,7 @@ const initialState = {
     isError: false
 }
 
-export const productReducer = (state = initialState, action) => {
+export const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_PRODUCT:
             return{

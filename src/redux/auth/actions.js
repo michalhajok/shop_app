@@ -7,16 +7,23 @@ const loginFailed = () => ({ type: LOGIN_FAILED });
 const loginSuccess = (data) => ({ type: LOGIN_SUCCESS, data });
 const logout = () => ({ type: LOG_OUT });
 
-const login = (dispatch) => {
-  dispatch(loginRequest);
-  return function () {
-    fetch("http://localhost:4000/auth/login")
-      .then((response) => response.json())
-      .then((data) => {
-        if (data) {
-          dispatch(loginSuccess());
+const login = (data, red) => {
+  return function (dispatch) {
+    dispatch(loginRequest());
+    fetch("http://localhost:4000/user/login", {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res.ok) {
+          dispatch(loginSuccess(data))
+          red.push('/shopApp')
         } else {
-          dispatch(loginFailed);
+          dispatch(loginFailed());
         }
       })
       .catch((err) => dispatch(loginFailed()));

@@ -1,15 +1,17 @@
 import React from "react";
 
 import { BrowserRouter, Switch } from "react-router-dom";
-import { PublicRoute } from "./routes";
+import { PrivateRoute, PublicRoute } from "./routes";
 
 import HomePage from "./pages/homePage";
 import LoginPage from "./pages/loginPage";
 import ProductsPage from "./pages/productsPage";
 import RegisterPage from "./pages/registerPage";
 import ItemPage from "./pages/itemPage";
+import AdminPanel from './pages/adminPanel'
 
 import "./App.scss";
+import 'react-placeholder/lib/reactPlaceholder.css';
 
 function App() {
   return (
@@ -45,6 +47,11 @@ function App() {
           path="/shopApp/products/:category/:_id"
           component={ItemPage}
         />
+        <PublicRoute
+          exact
+          path='/shopApp/adminPanel'
+          component={AdminPanel}
+          />
       </Switch>
     </BrowserRouter>
   );

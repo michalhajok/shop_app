@@ -5,8 +5,11 @@ import { useSelector, useDispatch } from "react-redux";
 import productActions from "../../redux/products/actions";
 
 import Nav from "../../components/organisms/nav";
+import LoaderExample from "../../components/atoms/loader";
 import ProductList from "../../components/organisms/productList";
 import Footer from "../../components/organisms/footer";
+
+import "./productsPage.scss";
 
 const ProductsPage = () => {
   const params = useParams();
@@ -19,14 +22,10 @@ const ProductsPage = () => {
   }, [dispatch, params.category]);
 
   return (
-    <div>
+    <div className="productsPage">
       <Nav />
-      <div>
-        {isLoading ? (
-          <div>Loading ...</div>
-        ) : (
-          <ProductList products={products} />
-        )}
+      <div className="productsPage__content">
+        {isLoading ? <LoaderExample /> : <ProductList products={products} />}
       </div>
       <Footer />
     </div>

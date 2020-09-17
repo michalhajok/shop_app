@@ -7,16 +7,20 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
 
   return (
     <Route
-      
       {...rest}
       render={(props) =>
-        auth ? <Component {...props} /> : <Redirect to="/signin" />
+        auth ? <Component {...props} /> : <Redirect to="/shopApp/login" />
       }
     />
   );
 };
 
-export const PublicRoute = ({ component: Component, exact, restricted, ...rest }) => {
+export const PublicRoute = ({
+  component: Component,
+  exact,
+  restricted,
+  ...rest
+}) => {
   const auth = useSelector((state) => state.auth.isAuth);
 
   return (
@@ -25,7 +29,7 @@ export const PublicRoute = ({ component: Component, exact, restricted, ...rest }
       {...rest}
       render={(props) =>
         auth && restricted ? (
-          <Redirect to="/dashboard" />
+          <Redirect to="/shopApp" />
         ) : (
           <Component {...props} />
         )

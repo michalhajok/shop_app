@@ -1,29 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
+import actions from "../../redux/product/actions";
 import Nav from "../../components/organisms/nav";
+import LoaderExample from "../../components/atoms/loader";
 import Footer from "../../components/organisms/footer";
-import { useEffect } from "react";
-import { useState } from "react";
 
 const ItemPage = () => {
   const params = useParams();
-
-  const [item, setItem] = useState({})
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state.product);
+  const { isLoading, product } = state;
+  const { title, picture, description, brand, price } = product;
+  const [image, setImage] = useState("");
 
   useEffect(() => {
-      fetch(`http://localhost:4000/products/product/${params._id}`)
-      .then(res => res.json())
-      .then(data => setItem(data))
-      .catch(err => {
-          console.log(err)
-      })
-  }, [params._id])
+    dispatch(actions.ProductFetch(params._id))
+  }, [ dispatch, params._id]);
 
   return (
     <div>
       <Nav />
-      {item.title}
+      <div>
+        {isLoading ? (
+          <LoaderExample />
+        ) : (
+          <div>
+            <section>
+              <figure>
+                {picture.map((image) => (
+                  <img key={image} src={image} alt="img" />
+                ))}
+              </figure>
+              <figure>
+                <img src={image ? image : picture[0]} alt="img" />
+              </figure>
+            </section>
+            <main>
+              <h2>
+                {brand}
+              </h2>
+              <h3>{title}</h3>
+              <p>{price} zł</p>
+              <p>{description}</p>
+            </main>
+          </div>
+        )}
+      </div>
       <Footer />
     </div>
   );

@@ -2,8 +2,8 @@
 
 .navbar{
     display: flex;
-    background-color: $light;
-
+    background-color: $four;
+    height: 3.5em;
     .navbar__nav{
         flex-basis: 70%;
         justify-self: start;
@@ -15,16 +15,16 @@
     }
 
     .nav__link{
-        padding: 1em 1.5em;
+        height: 100%;
+        padding: 1.2em 1.5em;
     }
 
     .nav__link:hover {
-        background-color: $purple;
-        color: $light;
+        background-color: $lightFour;
     }
 
     a{
         display: block;
-        color: $purple;
+        color: white;
     }
 }

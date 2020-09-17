@@ -1,0 +1,9 @@
+@import '../../base';
+
+.productsPage {
+    min-height: 100vh;
+
+    .productsPage__content {
+min-height: calc(100vh - 7em);
+    }
+}
