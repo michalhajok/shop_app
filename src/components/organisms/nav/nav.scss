@@ -10,13 +10,20 @@
         display: flex;
     }
 
+    figure{
+        width: 5%;
+        img {
+            width: 100%;
+        }
+    }
+
     .navbar__rest{
         justify-self: end;
     }
 
     .nav__link{
         height: 100%;
-        padding: 1.2em 1.5em;
+        padding: 1.2em 1em;
     }
 
     .nav__link:hover {

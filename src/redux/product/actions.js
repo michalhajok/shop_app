@@ -8,7 +8,7 @@ const productSuccess = data => ({type: PRODUCT_SUCCESS, payload: data})
 const ProductFetch = (_id) => {
     return (dispatch) => {
         dispatch(productFetch())
-        fetch(`http://localhost:4000/products/product/${_id}`)
+        fetch(`http://192.168.0.11:4000/products/product/${_id}`)
         .then(res => res.json())
         .then(data => dispatch(productSuccess(data)))
         .catch(err => dispatch(productFailed()))

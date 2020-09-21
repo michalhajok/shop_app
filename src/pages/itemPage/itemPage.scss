@@ -1,14 +1,11 @@
 @import '../../base';
 
-.productsPage {
+.itemPage{
     min-height: 100vh;
 
-    .productsPage__content {
+    .itemPage--frame{
         min-height: calc(100vh - 7em);
-
-        a{
-            color: black;
-        }
-
+        display: grid;
+        place-content: center;
     }
 }

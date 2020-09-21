@@ -7,7 +7,8 @@ const initialState = {
     picture: [],
     brand: "",
     price: "",
-    description:""
+    description:"",
+    size: [],
   },
   isLoading: false,
   isError: false,

@@ -9,7 +9,7 @@ const AdminPanel = () => {
 
   useEffect(() => {
     dispatch(productsActions.fetchProducts(""));
-    fetch('http://localhost:4000/user/')
+    fetch('http://192.168.0.11:4000/user/')
     .then(res => res.json())
     .then(data => setUsers(data))
     .catch(err => console.log(err))

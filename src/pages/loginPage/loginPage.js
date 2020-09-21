@@ -29,33 +29,35 @@ const LoginPage = () => {
   return (
     <div className="loginPage">
       <Nav />
-      <header className="loginPage__header">
-        <h2>Sign in</h2>
-      </header>
-      <form className="loginPage__form" onSubmit={login}>
-        <label className="form--loginInput">
-          <FontAwesomeIcon icon={faUser} />
-          <input
-            type="text"
-            placeholder="Email"
-            value={user.email}
-            onChange={(e) => setUser({ ...user, email: e.target.value })}
-          />
-        </label>
-        <label className="form--loginInput">
-          <FontAwesomeIcon icon={faLock} />
-          <input
-            type="password"
-            placeholder="Password"
-            value={user.password}
-            onChange={(e) => setUser({ ...user, password: e.target.value })}
-          />
-        </label>
-        <button type="submit">Sign in</button>
-        <button className="loginPage--register">
-          <Link to="/shopApp/register">Register</Link>
-        </button>
-      </form>
+      <div className="loginPage--content">
+        <header className="loginPage__header">
+          <h2>Sign in</h2>
+        </header>
+        <form className="loginPage__form" onSubmit={login}>
+          <label className="form--loginInput">
+            <FontAwesomeIcon icon={faUser} />
+            <input
+              type="text"
+              placeholder="Email"
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+            />
+          </label>
+          <label className="form--loginInput">
+            <FontAwesomeIcon icon={faLock} />
+            <input
+              type="password"
+              placeholder="Password"
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+            />
+          </label>
+          <button type="submit">Sign in</button>
+          <button className="loginPage--register">
+            <Link to="/shopApp/register">Register</Link>
+          </button>
+        </form>
+      </div>
       <Footer />
     </div>
   );

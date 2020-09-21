@@ -19,8 +19,10 @@ const Nav = () => {
 
   return (
     <nav className="navbar">
-      <ul className="navbar__nav" >
-        <Link className="nav__link" to="/shopApp">Home</Link>
+      <ul className="navbar__nav">
+        <Link className="nav__link" to="/shopApp">
+          Home
+        </Link>
         <Dropdown to={clothesLink} list={clothes} title="Clothes" />
         <Dropdown to={shoesLink} list={shoes} title="Shoes" />
       </ul>
