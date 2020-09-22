@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import Button from "../../atoms/button";
+
+import "./registerForm.scss";
+
 const RegisterForm = () => {
   const [user, setUser] = useState({
     email: "",
@@ -49,10 +53,11 @@ const RegisterForm = () => {
 
   return (
     <div className="registerPage__registerForm">
-      <form onSubmit={addUser}>
+      <form onSubmit={addUser} className="registerForm--form">
         <label>
           <p>Email:</p>
           <input
+            placeholder="email"
             required
             name="email"
             type="email"
@@ -61,8 +66,9 @@ const RegisterForm = () => {
           />
         </label>
         <label>
-            <p>Password:</p>
+          <p>Password:</p>
           <input
+            placeholder="password"
             pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
             required
             name="password"
@@ -75,6 +81,7 @@ const RegisterForm = () => {
         <label>
           <p>Name:</p>
           <input
+            placeholder="name"
             pattern="[A-Za-z]"
             required
             name="name"
@@ -86,6 +93,7 @@ const RegisterForm = () => {
         <label>
           <p>Lastname:</p>
           <input
+            placeholder="last name"
             pattern="[A-Za-z]"
             required
             name="lastname"
@@ -104,6 +112,7 @@ const RegisterForm = () => {
         <label>
           <p>Birthday:</p>
           <input
+            placeholder="birthday"
             required
             name="birthday"
             type="date"
@@ -114,6 +123,7 @@ const RegisterForm = () => {
         <label>
           <p>Phone number:</p>
           <input
+            placeholder="phone number"
             required
             name="phone"
             type="number"
@@ -126,6 +136,7 @@ const RegisterForm = () => {
         <label>
           <p>City:</p>
           <input
+            placeholder="city"
             pattern="[A-Za-z]"
             required
             name="city"
@@ -137,6 +148,7 @@ const RegisterForm = () => {
         <label>
           <p>Address:</p>
           <input
+            placeholder="address"
             required
             name="address"
             type="text"
@@ -144,7 +156,7 @@ const RegisterForm = () => {
             onChange={handleUser}
           />
         </label>
-        <button type="submit">Register</button>
+        <Button type="submit">Register</Button>
       </form>
     </div>
   );

@@ -1,0 +1,67 @@
+@import '../../../base';
+
+.registerPage__registerForm {
+    display: grid;
+    place-content: center;
+
+    .registerForm--form {
+        display: flex;
+        flex-wrap: wrap;
+
+        label {
+            flex: 100%;
+            margin: 0.3em;
+            border-bottom: solid 2px $green;
+            outline: none;
+            box-shadow: 0;
+
+            p {
+                color: white;
+                margin-bottom: 0.2em;
+                font-weight: normal;
+            }
+
+            input, select {
+                -webkit-appearance: none;
+                -moz-appearance: textfield;
+                color: wheat;
+                border: none;
+                background: none;
+                width: 100%;
+                text-indent: 0.3em;
+                height: 1.8em;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button{
+                -webkit-appearance: none;
+            }
+        }
+
+        label:focus-within {
+            border-color: $hover;
+
+            p {
+                color: $hover;
+            }
+
+            input{
+                background: none;
+                border: none;
+                outline: none;
+            }
+        }
+    }
+}
+
+@media (min-width: 700px){
+    .registerPage__registerForm {
+    
+        .registerForm--form {
+    
+            label {
+                margin: 0.6em;
+            }
+        }
+    }
+}

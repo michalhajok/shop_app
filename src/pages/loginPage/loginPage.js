@@ -9,6 +9,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 
 import Nav from "../../components/organisms/nav";
+import Button from "../../components/atoms/button";
 import Footer from "../../components/organisms/footer";
 import "./login.scss";
 
@@ -52,10 +53,10 @@ const LoginPage = () => {
               onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
           </label>
-          <button type="submit">Sign in</button>
-          <button className="loginPage--register">
+          <Button type="submit">Sign in</Button>
+          <Button type="button" className="loginPage--register">
             <Link to="/shopApp/register">Register</Link>
-          </button>
+          </Button>
         </form>
       </div>
       <Footer />
