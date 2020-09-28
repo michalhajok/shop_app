@@ -1,7 +1,6 @@
-.adminPanel {
+.adminItem {
   min-height: 100vh;
-
-  .adminPanel__modules {
+  .adminItem__item {
     min-height: calc(100vh - 7em);
   }
 }

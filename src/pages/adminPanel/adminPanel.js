@@ -1,31 +1,63 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import productsActions from "../../redux/products/actions";
+import React, { useState } from "react";
+
+import { useDispatch } from "react-redux";
+import brandsActions from "../../redux/brands/actions";
+
+import { Link } from "react-router-dom";
+import Modal from "react-modal";
+
+import Nav from "../../components/organisms/nav";
+import Footer from "../../components/organisms/footer";
+
+import "./adminPanel.scss";
 
 const AdminPanel = () => {
-  const [users, setUsers] = useState([])
-  const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
+  const [brand, setBrand] = useState({
+    category: "",
+  });
 
-  useEffect(() => {
-    dispatch(productsActions.fetchProducts(""));
-    fetch('http://192.168.0.11:4000/user/')
-    .then(res => res.json())
-    .then(data => setUsers(data))
-    .catch(err => console.log(err))
-  }, [dispatch]);
+  const addBrand = (e) => {
+    e.preventDefault();
+    dispatch(brandsActions.addBrand(brand));
+  };
 
   return (
     <div className="adminPanel">
-      <div>Users:{users.map(user =>
-      <div key={user.email}>{user.name}</div>
-      )}</div>
-      <div>
-        Products:
-        {products.products.map((product) => (
-          <div key={product._id}>{product.title}</div>
-        ))}
+      <Nav />
+      <div className="adminPanel__modules">
+        <div>
+          <Link to="/shopApp/adminPanel/products">Products</Link>
+        </div>
+        <div>
+          <Link to="/shopApp/adminPanel/users">Users</Link>
+        </div>
+        <div>
+          <div onClick={() => setIsOpen(true)}>Brands</div>
+          <div>Currency</div>
+        </div>
       </div>
+      <Footer />
+      <Modal
+        ariaHideApp={false}
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+      >
+        <form onSubmit={addBrand}>
+          <label>
+            Brand
+            <input
+              type="text"
+              required
+              minLength="2"
+              value={brand.category}
+              onChange={(e) => setBrand({ category: e.target.value })}
+            />
+          </label>
+          <button type="submit">Add brand</button>
+        </form>
+      </Modal>
     </div>
   );
 };

@@ -1,0 +1,16 @@
+.adminProducts {
+  min-height: 100vh;
+
+  .adminProduct__itemList {
+    min-height: calc(100vh - 7em);
+    margin: 5vh 5vw;
+    .itemList {
+      display: flex;
+      flex-wrap: wrap;
+
+      .itemList--item {
+        flex-basis: 50%;
+      }
+    }
+  }
+}

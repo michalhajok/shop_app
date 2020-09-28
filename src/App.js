@@ -8,20 +8,19 @@ import LoginPage from "./pages/loginPage";
 import ProductsPage from "./pages/productsPage";
 import RegisterPage from "./pages/registerPage";
 import ItemPage from "./pages/itemPage";
-import AdminPanel from './pages/adminPanel'
+import AdminPanel from "./pages/adminPanel";
+import AdminProducts from "./pages/adminProducts";
+import AdminItem from "./pages/adminItem";
+import AdminUsers from "./pages/adminUsers";
 
 import "./App.scss";
-import 'react-placeholder/lib/reactPlaceholder.css';
+import "react-placeholder/lib/reactPlaceholder.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Switch className="App">
-        <Route
-          exact
-          path="/shopApp/"
-          component={HomePage}
-        />
+        <Route exact path="/shopApp/" component={HomePage} />
         <PublicRoute
           exact
           restricted={false}
@@ -44,11 +43,22 @@ function App() {
           path="/shopApp/products/:category/:_id"
           component={ItemPage}
         />
+        <PublicRoute exact path="/shopApp/adminPanel" component={AdminPanel} />
         <PublicRoute
           exact
-          path='/shopApp/adminPanel'
-          component={AdminPanel}
-          />
+          path="/shopApp/adminPanel/products"
+          component={AdminProducts}
+        />
+        <PublicRoute
+          exact
+          path="/shopApp/adminPanel/users"
+          component={AdminUsers}
+        />
+        <PublicRoute
+          exact
+          path="/shopApp/adminPanel/product/:id"
+          component={AdminItem}
+        />
       </Switch>
     </BrowserRouter>
   );

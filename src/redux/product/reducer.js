@@ -1,5 +1,10 @@
 import types from "./types";
-const { PRODUCT_FAILED, PRODUCT_FETCH, PRODUCT_SUCCESS } = types;
+const {
+  PRODUCT_FAILED,
+  PRODUCT_FETCH,
+  PRODUCT_SUCCESS,
+  PRODUCT_UPDATE,
+} = types;
 
 const initialState = {
   product: {
@@ -7,8 +12,13 @@ const initialState = {
     picture: [],
     brand: "",
     price: "",
-    description:"",
-    size: [],
+    description: "",
+    size: [
+      {
+        size: "",
+        quantity: 0,
+      },
+    ],
   },
   isLoading: false,
   isError: false,
@@ -37,6 +47,14 @@ export const productReducer = (state = initialState, action) => {
         isLoading: false,
         isError: false,
         product: action.payload,
+      };
+
+    case PRODUCT_UPDATE:
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        product: action.update,
       };
 
     default:
