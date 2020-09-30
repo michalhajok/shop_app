@@ -80,7 +80,6 @@ const AdminItem = () => {
     <div className="adminItem">
       <Nav />
       <div className="adminItem__content">
-        <Back />
         {isLoading ? (
           <Loader />
         ) : (

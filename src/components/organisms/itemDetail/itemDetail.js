@@ -3,24 +3,35 @@ import React from "react";
 import "./itemDetail.scss";
 
 const ItemDetail = ({ product, openModal }) => {
-  const {
-    title: _title,
-    description: _description,
-    price: _price,
-    size: _size,
-    brand: _brand,
-  } = product;
+  const { title, description, price, picture, size, brand } = product;
 
   return (
     <div className="adminItem__item">
-      <p>Brand: {_brand}</p>
-      <p>Title: {_title}</p>
-      <p>Price: {_price}</p>
-      <p>Description: {_description}</p>
+      <section className="item__picSection">
+        {picture.map((pic) => (
+          <figure key={pic}>
+            <img src={pic} alt="pic" />
+          </figure>
+        ))}
+      </section>
+      <section className="item__details">
+        <p>
+          Brand: <b>{brand}</b>
+        </p>
+        <p>
+          Title: <b>{title}</b>
+        </p>
+        <p>
+          Price: <b>{price}</b>
+        </p>
+        <p>
+          Description: <b>{description}</b>
+        </p>
+      </section>
       <div>
-        {_size.map(({ size, quantity }) => (
+        {size.map(({ size, quantity }) => (
           <p key={size}>
-            Size: {size}, Quantity: {quantity}
+            Size: <b>{size}</b>, Quantity: <b>{quantity}</b>
           </p>
         ))}
       </div>
