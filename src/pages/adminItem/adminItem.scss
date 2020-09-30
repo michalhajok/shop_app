@@ -1,6 +1,10 @@
+@import "../../base";
+
 .adminItem {
   min-height: 100vh;
-  .adminItem__item {
+  background-color: $background;
+  .adminItem__content {
     min-height: calc(100vh - 7em);
+    color: white;
   }
 }

@@ -79,8 +79,8 @@ const AdminItem = () => {
   return (
     <div className="adminItem">
       <Nav />
-      <Back />
-      <div>
+      <div className="adminItem__content">
+        <Back />
         {isLoading ? (
           <Loader />
         ) : (

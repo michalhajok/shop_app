@@ -25,7 +25,6 @@ const Nav = () => {
         </Link>
         <Dropdown to={clothesLink} list={clothes} title="Clothes" />
         <Dropdown to={shoesLink} list={shoes} title="Shoes" />
-        <Link to="/shopApp/adminPanel" className="nav__link" >Admin panel</Link>
       </ul>
       <div className="navbar__rest">
         {auth ? <SignOut /> : <SignIn className="nav__link" />}
