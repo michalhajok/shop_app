@@ -17,89 +17,100 @@ const ItemModal = ({
 
   return (
     <Modal
+      className="itemModal"
       isOpen={modalIsOpen}
       ariaHideApp={false}
       onRequestClose={() => setModalIsOpen(false)}
     >
-      <p onClick={() => setModalIsOpen(false)}>Close</p>
-      <div>
-        {warning ? <p>Please check correctness of data </p> : null}
-        <form>
-          <label>
-            <p>Brand:</p>
-            <input
-              autoComplete="off"
-              required
-              name="brand"
-              list="brand"
-              value={brand}
-              onChange={changeItem}
-            />
-            <datalist id="brand">
-              {brandList.map(({ _id, category }) => (
-                <option key={_id} value={category} />
-              ))}
-            </datalist>
-          </label>
-          <label>
-            <p>Title:</p>
-            <input
-              autoComplete="off"
-              required
-              name="title"
-              type="text"
-              value={title}
-              onChange={changeItem}
-            />
-          </label>
-          <label>
-            <p>Price:</p>
-            <input
-              autoComplete="off"
-              required
-              name="price"
-              type="number"
-              value={price}
-              onChange={changeItem}
-            />
+      <div className="itemModal__background">
+        <p onClick={() => setModalIsOpen(false)} className="close">
+          Close
+        </p>
+        <div className="background">
+          {warning ? (
+            <p className="warning">Please check correctness of data </p>
+          ) : null}
+          <form className="background--form">
             <label>
-              <p>Description:</p>
-              <textarea
+              <p>Brand:</p>
+              <input
                 autoComplete="off"
-                name="description"
-                value={description}
+                required
+                name="brand"
+                list="brand"
+                value={brand}
                 onChange={changeItem}
-              ></textarea>
-            </label>
-          </label>
-          {size.map(({ size, quantity }, index) => (
-            <label key={size}>
-              <p>Size {size}:</p>
-              <input
-                autoComplete="off"
-                required
-                name="size"
-                type="number"
-                value={quantity}
-                onChange={(e) => changeItem(e, index)}
               />
+              <datalist id="brand">
+                {brandList.map(({ _id, category }) => (
+                  <option key={_id} value={category} />
+                ))}
+              </datalist>
             </label>
-          ))}
-          {picture.map((picture, index) => (
-            <label key={picture}>
-              <p>Picture:</p>
+            <label>
+              <p>Title:</p>
               <input
                 autoComplete="off"
                 required
+                name="title"
                 type="text"
-                name="picture"
-                value={picture}
-                onChange={(e) => changeItem(e, index)}
+                value={title}
+                onChange={changeItem}
               />
             </label>
-          ))}
-        </form>
-        <button onClick={saveUpdate}>Save changes</button>
+            <label>
+              <p>Price:</p>
+              <input
+                autoComplete="off"
+                required
+                name="price"
+                type="number"
+                value={price}
+                onChange={changeItem}
+              />
+              <label>
+                <p>Description:</p>
+                <textarea
+                  autoComplete="off"
+                  name="description"
+                  value={description}
+                  onChange={changeItem}
+                ></textarea>
+              </label>
+            </label>
+            <div className="form--size">
+              {size.map(({ size, quantity }, index) => (
+                <label key={size}>
+                  <p>Size {size}:</p>
+                  <input
+                    autoComplete="off"
+                    required
+                    name="size"
+                    type="number"
+                    value={quantity}
+                    onChange={(e) => changeItem(e, index)}
+                  />
+                </label>
+              ))}
+            </div>
+            {picture.map((picture, index) => (
+              <label key={picture}>
+                <p>Picture:</p>
+                <input
+                  autoComplete="off"
+                  required
+                  type="text"
+                  name="picture"
+                  value={picture}
+                  onChange={(e) => changeItem(e, index)}
+                />
+              </label>
+            ))}
+          </form>
+          <button className="save" onClick={saveUpdate}>
+            Save changes
+          </button>
+        </div>
       </div>
     </Modal>
   );

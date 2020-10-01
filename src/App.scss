@@ -1,4 +1,4 @@
-@import './base';
+@import "./base";
 
 * {
   box-sizing: border-box;
@@ -16,4 +16,8 @@
 
 img {
   width: 100%;
+}
+
+textarea {
+  resize: none;
 }

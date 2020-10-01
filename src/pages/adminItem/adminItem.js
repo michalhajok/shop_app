@@ -10,7 +10,6 @@ import Nav from "../../components/organisms/nav";
 import Loader from "../../components/atoms/loader";
 import ItemDetail from "../../components/organisms/itemDetail";
 import ItemModal from "../../components/organisms/itemModal";
-import Back from "../../components/atoms/back";
 import Footer from "../../components/organisms/footer";
 
 import "./adminItem.scss";
@@ -40,6 +39,7 @@ const AdminItem = () => {
   const openModal = () => {
     setItem(product);
     setModalIsOpen(true);
+    setWarning(false);
   };
 
   const changeItem = (e, index) => {

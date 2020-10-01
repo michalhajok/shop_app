@@ -1,5 +1,6 @@
 import React from "react";
 
+import Back from "../../atoms/back";
 import "./itemDetail.scss";
 
 const ItemDetail = ({ product, openModal }) => {
@@ -7,6 +8,7 @@ const ItemDetail = ({ product, openModal }) => {
 
   return (
     <div className="adminItem__item">
+      <Back />
       <section className="item__picSection">
         {picture.map((pic) => (
           <figure key={pic}>
@@ -28,14 +30,16 @@ const ItemDetail = ({ product, openModal }) => {
           Description: <b>{description}</b>
         </p>
       </section>
-      <div>
+      <div className="item__size">
         {size.map(({ size, quantity }) => (
           <p key={size}>
             Size: <b>{size}</b>, Quantity: <b>{quantity}</b>
           </p>
         ))}
       </div>
-      <button onClick={openModal}>Change</button>
+      <button className="item__change" onClick={openModal}>
+        Change
+      </button>
     </div>
   );
 };
