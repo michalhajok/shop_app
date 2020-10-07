@@ -59,6 +59,11 @@ function App() {
           path="/shopApp/adminPanel/product/:id"
           component={AdminItem}
         />
+        <Route path="*">
+          <div>
+            <p>404 </p>
+          </div>
+        </Route>
       </Switch>
     </BrowserRouter>
   );

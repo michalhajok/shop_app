@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import brandsActions from "../../redux/brands/actions";
 
 import { Link } from "react-router-dom";
-import Modal from "react-modal";
 
 import Nav from "../../components/organisms/nav";
+import AddBrand from "../../components/organisms/addBrand";
 import Footer from "../../components/organisms/footer";
 
 import "./adminPanel.scss";
@@ -35,29 +35,16 @@ const AdminPanel = () => {
         </div>
         <div>
           <div onClick={() => setIsOpen(true)}>Brands</div>
-          <div>Currency</div>
         </div>
       </div>
       <Footer />
-      <Modal
-        ariaHideApp={false}
+      <AddBrand
         isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
-      >
-        <form onSubmit={addBrand}>
-          <label>
-            Brand
-            <input
-              type="text"
-              required
-              minLength="2"
-              value={brand.category}
-              onChange={(e) => setBrand({ category: e.target.value })}
-            />
-          </label>
-          <button type="submit">Add brand</button>
-        </form>
-      </Modal>
+        setBrand={setBrand}
+        addBrand={addBrand}
+        brand={brand}
+        setIsOpen={setIsOpen}
+      />
     </div>
   );
 };

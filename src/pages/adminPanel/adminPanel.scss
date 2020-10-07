@@ -1,7 +1,10 @@
+@import "../../base";
+
 .adminPanel {
   min-height: 100vh;
 
   .adminPanel__modules {
     min-height: calc(100vh - 7em);
+    background-color: $background;
   }
 }
