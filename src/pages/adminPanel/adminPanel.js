@@ -27,14 +27,14 @@ const AdminPanel = () => {
     <div className="adminPanel">
       <Nav />
       <div className="adminPanel__modules">
-        <div>
-          <Link to="/shopApp/adminPanel/products">Products</Link>
-        </div>
-        <div>
-          <Link to="/shopApp/adminPanel/users">Users</Link>
-        </div>
-        <div>
-          <div onClick={() => setIsOpen(true)}>Brands</div>
+        <Link to="/shopApp/adminPanel/products" className="modules__item">
+          Products
+        </Link>
+        <Link to="/shopApp/adminPanel/users" className="modules__item">
+          Users
+        </Link>
+        <div onClick={() => setIsOpen(true)} className="modules__item">
+          Brand
         </div>
       </div>
       <Footer />

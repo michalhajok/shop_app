@@ -4,6 +4,8 @@ import Nav from "../../components/organisms/nav";
 import Back from "../../components/atoms/back";
 import Footer from "../../components/organisms/footer";
 
+import "./adminUsers.scss";
+
 const AdminUsers = () => {
   const [users, setUsers] = useState([]);
 
@@ -15,14 +17,20 @@ const AdminUsers = () => {
   }, []);
 
   return (
-    <div>
+    <div className="adminUsers">
       <Nav />
-      <Back />
-      <div>
-        Users:
-        {users.map((user) => (
-          <div key={user.email}>{user.name}</div>
-        ))}
+      <div className="adminUsers__content">
+        <Back />
+        <p className="content__user">Users: {users.length}</p>
+        <div className="content__userList">
+          {users.map((user) => (
+            <div className="userList__item" key={user.email}>
+              <p>
+                Login: <b>{user.name}</b>
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
       <Footer />
     </div>
