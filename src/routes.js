@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 export const PrivateRoute = ({ component: Component, ...rest }) => {
-  const auth = useSelector((state) => state.auth.isAuth);
+  const auth = useSelector((state) => state.auth);
 
   return (
     <Route
@@ -28,7 +28,7 @@ export const PublicRoute = ({
       exact={exact}
       {...rest}
       render={(props) =>
-        auth && restricted ? (
+        auth.isAuth && auth.username === "sadmin" ? (
           <Redirect to="/shopApp" />
         ) : (
           <Component {...props} />

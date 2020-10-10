@@ -9,7 +9,7 @@ import SignOut from "../../atoms/signOut";
 import "./nav.scss";
 
 const Nav = () => {
-  const auth = useSelector((state) => state.auth.isAuth);
+  const auth = useSelector((state) => state.auth);
 
   const shoesLink = "/shopApp/products/";
   const clothesLink = "/shopApp/products/";
@@ -27,7 +27,15 @@ const Nav = () => {
         <Dropdown to={shoesLink} list={shoes} title="Shoes" />
       </ul>
       <div className="navbar__rest">
-        {auth ? <SignOut /> : <SignIn className="nav__link" />}
+        <Link to="/shopApp/card" className="nav__link">
+          Card
+        </Link>
+        {auth.isAuth ? <SignOut /> : <SignIn className="nav__link" />}
+        {auth.username === "sadmin" ? (
+          <Link className="nav__link" to="/shopApp/AdminPanel">
+            Admin Panel
+          </Link>
+        ) : null}
       </div>
     </nav>
   );

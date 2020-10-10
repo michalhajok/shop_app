@@ -1,0 +1,24 @@
+@import "../../base";
+
+.basketPage {
+  background-color: $background;
+
+  .basketPage__basket {
+    min-height: calc(100vh - 7em);
+    color: white;
+
+    .basket__empty {
+      padding: 5em 10em;
+      text-align: center;
+    }
+
+    .basket__card {
+      padding: 5em 10em;
+      display: flex;
+
+      .card__itemList {
+        flex-basis: 60%;
+      }
+    }
+  }
+}

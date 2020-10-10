@@ -12,16 +12,16 @@ const login = (data, red) => {
     dispatch(loginRequest());
     fetch("http://localhost:4000/user/login", {
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       method: "POST",
       body: JSON.stringify(data),
     })
       .then((res) => {
         if (res.ok) {
-          dispatch(loginSuccess(data))
-          red.push('/shopApp')
+          dispatch(loginSuccess(data));
+          red.push("/shopApp");
         } else {
           dispatch(loginFailed());
         }

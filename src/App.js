@@ -1,13 +1,14 @@
 import React from "react";
 
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { PublicRoute } from "./routes";
+import { PublicRoute, PrivateRoute } from "./routes";
 
 import HomePage from "./pages/homePage";
 import LoginPage from "./pages/loginPage";
 import ProductsPage from "./pages/productsPage";
 import RegisterPage from "./pages/registerPage";
 import ItemPage from "./pages/itemPage";
+import BasketPage from "./pages/basketPage";
 import AdminPanel from "./pages/adminPanel";
 import AdminProducts from "./pages/adminProducts";
 import AdminItem from "./pages/adminItem";
@@ -43,22 +44,23 @@ function App() {
           path="/shopApp/products/:category/:_id"
           component={ItemPage}
         />
-        <PublicRoute exact path="/shopApp/adminPanel" component={AdminPanel} />
-        <PublicRoute
+        <PrivateRoute exact path="/shopApp/adminPanel" component={AdminPanel} />
+        <PrivateRoute
           exact
           path="/shopApp/adminPanel/products"
           component={AdminProducts}
         />
-        <PublicRoute
+        <PrivateRoute
           exact
           path="/shopApp/adminPanel/users"
           component={AdminUsers}
         />
-        <PublicRoute
+        <PrivateRoute
           exact
           path="/shopApp/adminPanel/product/:id"
           component={AdminItem}
         />
+        <PublicRoute exact path="/shopApp/card" component={BasketPage} />
         <Route path="*">
           <div>
             <p>404 </p>

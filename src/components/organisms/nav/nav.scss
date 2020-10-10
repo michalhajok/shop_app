@@ -1,37 +1,39 @@
-@import '../../../base';
+@import "../../../base";
 
-.navbar{
+.navbar {
+  display: flex;
+  background-color: $four;
+  height: 3.5em;
+  .navbar__nav {
+    flex-basis: 70%;
+    justify-self: start;
     display: flex;
-    background-color: $four;
-    height: 3.5em;
-    .navbar__nav{
-        flex-basis: 70%;
-        justify-self: start;
-        display: flex;
-    }
+  }
 
-    figure{
-        width: 5%;
-        img {
-            width: 100%;
-        }
+  figure {
+    width: 5%;
+    img {
+      width: 100%;
     }
+  }
 
-    .navbar__rest{
-        justify-self: end;
-    }
+  .navbar__rest {
+    display: flex;
+    justify-self: end;
+  }
 
-    .nav__link{
-        height: 100%;
-        padding: 1.2em 1em;
-    }
+  .nav__link {
+    height: 100%;
+    padding: 1.2em 1em;
+    color: white;
+  }
 
-    .nav__link:hover {
-        background-color: $lightFour;
-    }
+  .nav__link:hover {
+    background-color: $lightFour;
+  }
 
-    a{
-        display: block;
-        color: white;
-    }
+  a {
+    display: block;
+    color: white;
+  }
 }
