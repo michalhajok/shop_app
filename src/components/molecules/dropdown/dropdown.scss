@@ -1,38 +1,54 @@
-@import '../../../base';
+@import "../../../base";
 
-.dropdown{
+.dropdown {
+  position: relative;
+
+  .dropdown__title {
+    padding: 1.2em 1.5em;
+    display: none;
+    color: white;
+  }
+  .dropdown__title:hover {
+    background-color: $lightFour;
+    color: white;
+  }
+
+  .dropdown__content {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $four;
+  }
+
+  .content__link {
+    text-align: center;
+    padding: 1em 0;
+    flex-basis: 100%;
+    border-bottom: 3px solid $four;
+  }
+
+  .content__link:hover {
+    background-color: $lightFour;
+    border-bottom: 3px solid $closeIcon;
+    color: white;
+  }
+}
+
+@media (min-width: 800px) {
+  .dropdown {
     position: relative;
 
-    .dropdown__title{
-        padding: 1.2em 1.5em;
-        color: white;
-    }
-    .dropdown__title:hover{
-        background-color: $lightFour;
-        color: white;
+    .dropdown__title {
+      display: block;
     }
 
-    .dropdown__content{
-        display: none;
-        position: absolute;
-        background-color: $four;
+    .dropdown__content {
+      display: none;
+      position: absolute;
     }
-
-    .content__link{
-        text-align: center;
-        padding: 1em 0;
-        flex-basis: 100%;
-        border-bottom: 3px solid $four;
-    }
-    
-    .content__link:hover{
-        background-color: $lightFour;
-        border-bottom: 3px solid $closeIcon;
-        color: white;
-    }
-}
-.dropdown:hover .dropdown__content{
+  }
+  .dropdown:hover .dropdown__content {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+  }
 }

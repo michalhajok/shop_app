@@ -9,7 +9,11 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        auth ? <Component {...props} /> : <Redirect to="/shopApp/login" />
+        auth.isAuth && auth.username ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to="/shopApp/login" />
+        )
       }
     />
   );
@@ -28,11 +32,7 @@ export const PublicRoute = ({
       exact={exact}
       {...rest}
       render={(props) =>
-        auth.isAuth && auth.username === "sadmin" ? (
-          <Redirect to="/shopApp" />
-        ) : (
-          <Component {...props} />
-        )
+        auth.isAuth ? <Redirect to="/shopApp" /> : <Component {...props} />
       }
     />
   );

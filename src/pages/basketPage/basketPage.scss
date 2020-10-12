@@ -8,16 +8,35 @@
     color: white;
 
     .basket__empty {
-      padding: 5em 10em;
+      padding: 1em 2em;
       text-align: center;
     }
 
     .basket__card {
-      padding: 5em 10em;
+      padding: 1em 2em;
       display: flex;
 
+      flex-wrap: wrap;
+
       .card__itemList {
-        flex-basis: 60%;
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .basketPage {
+    .basketPage__basket {
+      .basket__empty {
+        padding: 5em 10em;
+      }
+
+      .basket__card {
+        padding: 5em 10em;
+        .card__itemList {
+          flex-basis: 60%;
+        }
       }
     }
   }

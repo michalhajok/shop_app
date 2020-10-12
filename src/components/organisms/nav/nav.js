@@ -19,6 +19,7 @@ const Nav = () => {
 
   return (
     <nav className="navbar">
+      <div className="navbar__menu">Menu</div>
       <ul className="navbar__nav">
         <Link className="nav__link" to="/shopApp">
           Home
