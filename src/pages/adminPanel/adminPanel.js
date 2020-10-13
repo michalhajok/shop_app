@@ -27,10 +27,10 @@ const AdminPanel = () => {
     <div className="adminPanel">
       <Nav />
       <div className="adminPanel__modules">
-        <Link to="/shopApp/adminPanel/products" className="modules__item">
+        <Link to="/shop_app/adminPanel/products" className="modules__item">
           Products
         </Link>
-        <Link to="/shopApp/adminPanel/users" className="modules__item">
+        <Link to="/shop_app/adminPanel/users" className="modules__item">
           Users
         </Link>
         <div onClick={() => setIsOpen(true)} className="modules__item">

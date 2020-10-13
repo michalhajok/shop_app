@@ -21,7 +21,7 @@ const login = (data, red) => {
       .then((res) => {
         if (res.ok) {
           dispatch(loginSuccess(data));
-          red.push("/shopApp");
+          red.push("/shop_app");
         } else {
           dispatch(loginFailed());
         }

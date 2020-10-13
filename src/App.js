@@ -21,46 +21,50 @@ function App() {
   return (
     <BrowserRouter>
       <Switch className="App">
-        <Route exact path="/shopApp/" component={HomePage} />
+        <Route exact path="/shop_app/" component={HomePage} />
         <PublicRoute
           exact
           restricted={false}
-          path="/shopApp/login"
+          path="/shop_app/login"
           component={LoginPage}
         />
         <Route
           exact
-          path="/shopApp/products/:category"
+          path="/shop_app/products/:category"
           component={ProductsPage}
         />
         <PublicRoute
           exact
           restricted={true}
-          path="/shopApp/register"
+          path="/shop_app/register"
           component={RegisterPage}
         />
         <Route
           exact
-          path="/shopApp/products/:category/:_id"
+          path="/shop_app/products/:category/:_id"
           component={ItemPage}
         />
-        <PrivateRoute exact path="/shopApp/adminPanel" component={AdminPanel} />
         <PrivateRoute
           exact
-          path="/shopApp/adminPanel/products"
+          path="/shop_app/adminPanel"
+          component={AdminPanel}
+        />
+        <PrivateRoute
+          exact
+          path="/shop_app/adminPanel/products"
           component={AdminProducts}
         />
         <PrivateRoute
           exact
-          path="/shopApp/adminPanel/users"
+          path="/shop_app/adminPanel/users"
           component={AdminUsers}
         />
         <PrivateRoute
           exact
-          path="/shopApp/adminPanel/product/:id"
+          path="/shop_app/adminPanel/product/:id"
           component={AdminItem}
         />
-        <PublicRoute exact path="/shopApp/card" component={BasketPage} />
+        <PublicRoute exact path="/shop_app/card" component={BasketPage} />
         <Route path="*">
           <div>
             <p>404 </p>

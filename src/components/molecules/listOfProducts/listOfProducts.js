@@ -22,7 +22,7 @@ const ListOfProducts = ({ filters, products }) => {
         .map(({ _id, brand, title }) => (
           <Link
             className="itemList--item"
-            to={`/shopApp/adminPanel/product/${_id}`}
+            to={`/shop_app/adminPanel/product/${_id}`}
             key={_id}
           >
             <b>{brand}</b>

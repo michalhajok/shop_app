@@ -55,7 +55,7 @@ const LoginPage = () => {
           </label>
           <Button type="submit">Sign in</Button>
           <Button type="button" className="loginPage--register">
-            <Link to="/shopApp/register">Register</Link>
+            <Link to="/shop_app/register">Register</Link>
           </Button>
         </form>
       </div>

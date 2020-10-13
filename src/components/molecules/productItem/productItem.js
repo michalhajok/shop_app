@@ -8,7 +8,7 @@ const ProductItem = ({ product }) => {
   const params = useParams();
   return (
     <Link
-      to={`/shopApp/products/${params.category}/${_id}`}
+      to={`/shop_app/products/${params.category}/${_id}`}
       className="productItem"
     >
       <figure className="productItem__image">
