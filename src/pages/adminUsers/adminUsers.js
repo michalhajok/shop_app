@@ -10,7 +10,7 @@ const AdminUsers = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("http://192.168.0.11:4000/user/")
+    fetch("https://shopappbackend.herokuapp.com/user/")
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.log(err));

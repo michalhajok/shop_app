@@ -10,7 +10,7 @@ const logout = () => ({ type: LOG_OUT });
 const login = (data, red) => {
   return function (dispatch) {
     dispatch(loginRequest());
-    fetch("http://localhost:4000/user/login", {
+    fetch("https://shopappbackend.herokuapp.com/user/login", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

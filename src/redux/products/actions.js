@@ -20,7 +20,7 @@ const deleteProduct = () => ({ type: DELETE_PRODUCT });
 const fetchProducts = (category) => {
   return function (dispatch) {
     dispatch(fetchRequest());
-    fetch(`http://192.168.0.11:4000/products/${category}`)
+    fetch(`https://shopappbackend.herokuapp.com/products/${category}`)
       .then((res) => res.json())
       .then((data) => dispatch(fetchProductsSuccess(data)))
       .catch((err) => {

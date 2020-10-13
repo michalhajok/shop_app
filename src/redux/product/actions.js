@@ -8,7 +8,7 @@ const productSuccess = (data) => ({ type: PRODUCT_SUCCESS, payload: data });
 const ProductFetch = (_id) => {
   return (dispatch) => {
     dispatch(productFetch());
-    fetch(`http://192.168.0.11:4000/products/product/${_id}`)
+    fetch(`https://shopappbackend.herokuapp.com/products/product/${_id}`)
       .then((res) => res.json())
       .then((data) => dispatch(productSuccess(data)))
       .catch((err) => dispatch(productFailed()));
@@ -18,7 +18,7 @@ const ProductFetch = (_id) => {
 const productUpdate = (_id, data) => {
   return (dispatch) => {
     dispatch(productFetch());
-    fetch(`http://192.168.0.11:4000/products/update/${_id}`, {
+    fetch(`https://shopappbackend.herokuapp.com/products/update/${_id}`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
