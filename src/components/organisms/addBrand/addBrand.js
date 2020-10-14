@@ -9,7 +9,8 @@ import "./addBrand.scss";
 
 const AddBrand = ({ isOpen, addBrand, brand, setBrand, setIsOpen }) => {
   const dispatch = useDispatch();
-  const brandList = useSelector((state) => state.brands.brands);
+  const brands = useSelector((state) => state.brands);
+  const { isLoading, brands: brandList } = brands;
   const { category } = brand;
 
   useEffect(() => {
@@ -41,12 +42,18 @@ const AddBrand = ({ isOpen, addBrand, brand, setBrand, setIsOpen }) => {
           </label>
           <button type="submit">Add brand</button>
         </form>
-        <main className="brandModal__brandList">
-          {brandList.map(({ _id, category }) => (
-            <div key={_id} className="brandList__item">
-              {category}
+        <main>
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <div className="brandModal__brandList">
+              {brandList.map(({ _id, category }) => (
+                <div key={_id} className="brandList__item">
+                  {category}
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </main>
       </div>
     </Modal>

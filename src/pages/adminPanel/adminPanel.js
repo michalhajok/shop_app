@@ -21,6 +21,9 @@ const AdminPanel = () => {
   const addBrand = (e) => {
     e.preventDefault();
     dispatch(brandsActions.addBrand(brand));
+    setTimeout(() => {
+      dispatch(brandsActions.fetchData());
+    }, 1 * 1000);
   };
 
   return (
