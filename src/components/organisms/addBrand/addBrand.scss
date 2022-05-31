@@ -1,0 +1,79 @@
+@import "../../../base";
+
+.brandModal {
+  position: absolute;
+  top: 3vh;
+  left: 3vw;
+  right: 3vw;
+  bottom: 3vh;
+  background-color: $background;
+  border-radius: 0.5em;
+
+  .brandModal__close {
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      color: $closeIcon;
+      padding: 1em;
+    }
+  }
+
+  .brandModal__form {
+    padding: 1em;
+    color: $green;
+    border-top: solid $coral 1px;
+    border-bottom: solid $coral 1px;
+
+    label {
+      width: 100%;
+
+      input {
+        background: none;
+        outline: none;
+        border: none;
+        border-bottom: solid 1px $green;
+        padding: 0.4em;
+        color: black;
+        margin-bottom: 0.5em;
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: 1em;
+      outline: none;
+      padding: 0.5em 1em;
+      margin-left: 1em;
+      background-color: $hover;
+      color: black;
+    }
+
+    button:hover {
+      background-color: $coral;
+    }
+  }
+
+  .brandModal__brandList {
+    display: flex;
+    flex-wrap: wrap;
+
+    .brandList__item {
+      flex-basis: 50%;
+      padding: 0.5em;
+      text-align: center;
+      color: black;
+      font-weight: normal;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .brandModal {
+    .brandModal__brandList {
+      .brandList__item {
+        flex-basis: 25%;
+      }
+    }
+  }
+}

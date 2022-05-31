@@ -1,0 +1,55 @@
+@import "../../../base";
+
+.dropdown {
+    position: relative;
+    font-size: 16px;    
+    background-color: white;
+
+    .dropdown__title {
+        padding: 10px;
+        display: none;
+        color: black;
+    }
+    .dropdown__title:hover {
+        color: black;
+    }
+
+    .dropdown__content {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: white;
+    }
+
+    .content__link {
+        text-align: center;
+        padding: 10px;
+        flex-basis: 100%;
+        border-bottom: solid 1px white;
+    }
+
+    .content__link:hover {
+        color: black;
+        border-bottom: solid 1px black;
+    }
+}
+
+@media (min-width: 800px) {
+    .dropdown {
+        position: relative;
+
+        .dropdown__title {
+        display: block;
+        }
+
+        .dropdown__content {
+        display: none;
+        position: absolute;
+        }
+    }
+    
+    .dropdown:hover .dropdown__content {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

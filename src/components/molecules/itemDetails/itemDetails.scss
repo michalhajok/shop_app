@@ -1,0 +1,29 @@
+.itemPage__details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    * {
+        flex-basis: 100%;
+    }
+
+    .details__caption {
+        height: fit-content;
+        margin-top: 0.3em;
+
+        * {
+            padding: 0.3em;
+        }
+    }
+
+    select {
+        margin: 0.5em;
+        padding: 0.4em;
+    }
+
+    button {
+        margin: 0.5em;
+        padding: 0.4em;
+    }
+}

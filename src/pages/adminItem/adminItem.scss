@@ -1,0 +1,18 @@
+@import "../../base";
+
+.adminItem {
+  min-height: 100vh;
+  background-color: $background;
+
+  .adminItem__content {
+    min-height: calc(100vh - 7em);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .loader {
+      grid-column: 2/3;
+      place-self: start;
+    }
+  }
+}

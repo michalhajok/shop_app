@@ -1,0 +1,43 @@
+@import "../../base";
+
+.basketPage {
+  background-color: $background;
+
+  .basketPage__basket {
+    min-height: calc(100vh - 7em);
+    color: black;
+
+    .basket__empty {
+      padding: 1em 2em;
+      text-align: center;
+    }
+
+    .basket__card {
+      padding: 1em 2em;
+      display: flex;
+
+      flex-wrap: wrap;
+
+      .card__itemList {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .basketPage {
+    .basketPage__basket {
+      .basket__empty {
+        padding: 5em 10em;
+      }
+
+      .basket__card {
+        padding: 5em 10em;
+        .card__itemList {
+          flex-basis: 60%;
+        }
+      }
+    }
+  }
+}

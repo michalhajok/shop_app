@@ -1,0 +1,41 @@
+@import "../../../base";
+
+.basketItem {
+  display: flex;
+  padding: 0.3em;
+  border-bottom: solid 0.5px black;
+
+  .basketItem__figure {
+    flex-basis: 20%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .basketItem__header {
+    padding: 0.2em;
+
+    p {
+      font-weight: normal;
+      padding: 0.1em;
+    }
+
+    article {
+      display: flex;
+    }
+
+    .basketItem__delete:hover {
+      cursor: pointer;
+      color: $coral;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .basketItem {
+    .basketItem__figure {
+      flex-basis: 10%;
+    }
+  }
+}

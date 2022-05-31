@@ -1,0 +1,55 @@
+@import "../../../base";
+
+.navbar {
+    display: block;
+
+    .navbar__rest {
+        display: none;
+    }
+
+    a {
+        display: block;
+        color: black;
+    }
+}
+
+@media (min-width: 800px) {
+    .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        
+        .navbar__header {
+            flex-basis: 100%;
+            display: flex;
+            position: relative;
+            justify-content: flex-end;
+            margin: 0 20px;
+            
+            h2 {
+                padding: 10px 0;
+                position: absolute;
+                left: 50%;
+                font-weight: normal;
+            }
+        }
+
+        .navbar__nav {
+        display: flex;
+        justify-self: start;
+        flex-basis: 100%;
+        }
+
+        .navbar__rest {
+            display: flex;
+            justify-self: end;
+        }
+
+        .nav__link {
+            height: 100%;
+            margin: 0 10px;
+            padding: 10px;
+            color: black;
+        }
+    }
+}

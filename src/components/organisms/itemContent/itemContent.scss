@@ -1,0 +1,14 @@
+.itemPage--content{
+    width: 80vw;
+    margin: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 600px) {
+
+    .itemPage--content{
+        width: 40vw;
+        flex-wrap: nowrap;
+    }
+}

@@ -1,0 +1,12 @@
+@import "../../base";
+
+.adminProducts {
+  min-height: 100vh;
+
+  .adminProduct__itemList {
+    min-height: calc(100vh - 7em);
+    padding: 1vh 5vw;
+    background-color: $background;
+    color: white;
+  }
+}

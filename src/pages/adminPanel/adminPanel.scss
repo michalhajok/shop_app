@@ -1,0 +1,27 @@
+@import "../../base";
+
+.adminPanel {
+  min-height: 100vh;
+  background-color: $background;
+
+  .adminPanel__modules {
+    min-height: calc(100vh - 7em);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 2em;
+
+    .modules__item {
+      text-align: center;
+      margin: 0 1em;
+      padding: 2em 2em;
+      border: white 2px solid;
+      color: white;
+    }
+
+    .modules__item:hover {
+      color: $coral;
+      border-color: $coral;
+    }
+  }
+}

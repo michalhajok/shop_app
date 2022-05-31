@@ -1,0 +1,43 @@
+@import "./base";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: default;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+input {
+    cursor: text;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+img {
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+}
+
+body {
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: rgb(201, 201, 201);
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: rgb(87, 92, 92);
+        border-radius: 5px;
+    }
+}

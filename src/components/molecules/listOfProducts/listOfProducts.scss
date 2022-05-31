@@ -1,0 +1,25 @@
+@import "../../../base";
+
+.itemList {
+  display: flex;
+  flex-wrap: wrap;
+
+  .itemList--item {
+    flex-basis: 50%;
+    color: #ff8a65;
+    font-weight: normal;
+    padding: 0.5em;
+  }
+
+  .itemList--item:hover {
+    color: $hover;
+  }
+}
+
+@media (min-width: 1000px) {
+  .itemList {
+    .itemList--item {
+      flex-basis: 33%;
+    }
+  }
+}

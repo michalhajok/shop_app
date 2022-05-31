@@ -1,0 +1,13 @@
+@import "../../base";
+
+.itemPage {
+  min-height: 100vh;
+  background-color: $background;
+
+  .itemPage--frame {
+    min-height: calc(100vh - 7em);
+    display: grid;
+    place-content: center;
+    color: white;
+  }
+}

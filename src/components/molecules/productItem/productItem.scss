@@ -1,0 +1,33 @@
+@import '../../../base';
+
+.productItem {
+    flex-basis: 46%;
+    margin: 2%;
+    font-size: 14px;
+    color: black;
+    
+    article {
+        display: grid;
+        
+        p { 
+            padding: 0 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .productItem__image{
+
+        img{
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 700px){
+    .productItem{
+        flex-basis: 21%;
+        margin: 2%;
+    }
+}

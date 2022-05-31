@@ -1,0 +1,106 @@
+@import '../../base';
+
+.loginPage{
+    min-height: 100vh;
+
+    .loginPage--content{
+        min-height: calc(100vh - 7em);
+        display: grid;
+        place-content: center;
+        background-color: $background;
+        grid-template-columns: 1fr 6fr 1fr;
+
+        .loginPage__header{
+            grid-column: 2/3;
+            justify-self: center;
+            
+            h2{
+                text-align: center;
+                font-weight: normal;
+                font-size: 36px;
+                margin: 0.7em 0 ;
+                color: black;
+            }
+        }
+
+        .loginPage__form {
+            grid-column: 2/3;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .form--loginInput {
+                flex-basis: 100%;
+                text-align: left;
+                margin: 0.5em;
+                padding-bottom: 0.2em;
+                border-bottom: 2px solid #000;
+
+                svg {
+                    margin: 0 0.5em;
+                    color: black;
+                }
+
+                input {
+                    height: 2em;
+                    text-indent: 1vh;
+                    font-size: 16px;
+                    color: black;
+                    border: none;
+                    outline: none;
+                    background: none;
+                }
+
+                input::placeholder {
+                    color:  rgb(61, 58, 53);
+                    opacity: 0.7;
+                } 
+            }
+
+            .form--loginInput:focus-within {
+                border-color: $hover;
+                
+                svg {
+                    color: $hover;
+                }
+            }
+    
+            .form--register{
+                width: 100%;
+                text-align: center;
+                margin-top: 10px;
+                
+                a{
+                    width: fit-content;
+                    padding: 5px 10px;
+                    font-weight: bold;
+                    font-size: 16px;
+                    color: black;
+                    border-bottom: solid 2px black;
+                    transition: 0.2s all ease;
+                    
+                    &:hover {
+                        color: $hover;
+                        border-color: $hover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px){
+    .loginPage{
+        .loginPage--content{
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+    }
+}
+
+@media (min-width: 1000px){
+    .loginPage{
+        .loginPage--content{
+            grid-template-columns: 2fr 2fr 2fr;
+        }
+    }
+}
