@@ -1,10 +1,9 @@
 @import "../../base";
 
 .productsPage {
-    min-height: 100vh;
+    @extend .page;
 
     .productsPage__content {
-        min-height: calc(100vh - 7em);
         background-color: $background;
 
         a {

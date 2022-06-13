@@ -1,10 +1,5 @@
 @import "../../base";
 
 .homePage {
-    min-height: 100vh;
-
-    .homePage__content {
-        min-height: calc(100vh - 7em);
-        background-color: $background;
-    }
+    @extend .page;
 }

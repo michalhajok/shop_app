@@ -7,3 +7,10 @@ $coral: #ff8a65;
 $failed: #eb4d4b;
 $hover: #0099ff;
 $purple: #4834d4;
+
+.page {
+    background-color: $background;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}

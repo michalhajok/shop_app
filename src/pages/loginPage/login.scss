@@ -1,10 +1,9 @@
 @import '../../base';
 
 .loginPage{
-    min-height: 100vh;
+    @extend .page;
 
     .loginPage--content{
-        min-height: calc(100vh - 7em);
         display: grid;
         place-content: center;
         background-color: $background;

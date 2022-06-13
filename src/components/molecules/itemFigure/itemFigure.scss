@@ -24,6 +24,7 @@
 
 @media (min-width: 600px) {
     .itemPage__section--figures{
+        flex-basis: 50%;
         flex-wrap: nowrap;
 
         .figures__mini{

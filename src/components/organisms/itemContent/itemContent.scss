@@ -3,12 +3,21 @@
     margin: 5vh;
     display: flex;
     flex-wrap: wrap;
+    
+    .dolor {
+        padding: 15px 0;
+        flex-basis: 100%;
+        
+        article {
+            margin: 25px 0;
+        }
+    }
 }
 
 @media (min-width: 600px) {
 
     .itemPage--content{
-        width: 40vw;
-        flex-wrap: nowrap;
+        width: 50vw;
+        flex-wrap: wrap;
     }
 }

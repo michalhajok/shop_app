@@ -1,14 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 
 import Dropdown from "../../molecules/dropdown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBasketShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 import SignIn from "../../atoms/signIn";
 import SignOut from "../../atoms/signOut";
 
 import "./nav.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBasketShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
 
@@ -21,7 +20,9 @@ const Nav = () => {
     return (
         <nav className="navbar">
             <div className="navbar__header">
-                <h2>Shop App</h2>
+                <h2>
+                    <Link to="/shop_app">Shop App</Link>
+                </h2>
                 <Link to="/shop_app/card" className="nav__link">
                     <FontAwesomeIcon icon={faBasketShopping} />
                 </Link>

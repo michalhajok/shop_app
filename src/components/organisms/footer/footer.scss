@@ -1,13 +1,55 @@
 @import '../../../base';
 
 .footer{
-    background-color: $four;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(19, 18, 18);
     text-align: center;
-    height: 3.5em;
     padding: 1.2em;
     width: 100%;
-
-    a{
-        color: black;
+    
+    * {
+        color: white;
+    }
+    
+    .footer__menu {
+        
+        a {
+            margin: 5px 0;
+            text-align: left;
+            display: block;  
+        }
+    }
+    
+    .footer__payments {
+        
+        * {
+            display: block;
+            text-align: left;    
+        }
+    }
+    
+    .footer__delivery {
+        
+        * {
+            display: block;
+            text-align: left;    
+        }
+    }
+    
+    .footer_socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+        h2 {
+            font-weight: normal;
+            flex-basis: 100%;
+            cursor: default;
+        }
+        
+        * {
+            cursor: pointer;
+        }
     }
 }
