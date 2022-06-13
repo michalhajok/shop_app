@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import Dropdown from "../../molecules/dropdown";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBasketShopping, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBasketShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 import SignIn from "../../atoms/signIn";
 import SignOut from "../../atoms/signOut";
 
 import "./nav.scss";
 
 const Nav = () => {
+    const [hamburger, setHamburger] = useState(false)
 
     const shoesLink = "/shop_app/products/";
     const clothesLink = "/shop_app/products/";
@@ -29,11 +30,14 @@ const Nav = () => {
                 <Link to='/shop_app'  className="nav__link">
                     <FontAwesomeIcon icon={faUser} />
                 </Link>
+                <div className="nav--hamburger" onClick={() => setHamburger(!hamburger)}>
+                    <FontAwesomeIcon icon={faBars} />
+                </div>
             {/* {auth.isAuth ? <SignOut /> : <SignIn className="nav__link" />} */}
         </div>
-        <ul className="navbar__nav">
+        <ul className={`navbar__nav ${hamburger? 'navbar--hamburger': ''}`}>
             <Link className="nav__link" to="/shop_app">
-            Home
+                Home
             </Link>
             <Dropdown to={clothesLink} list={clothes} title="Clothes" />
             <Dropdown to={shoesLink} list={shoes} title="Shoes" />

@@ -2,11 +2,48 @@
 
 .navbar {
     display: block;
-
-    .navbar__rest {
+    
+    .navbar__header {
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin: 0 10px;
+        justify-content: flex-end;
+        
+        h2 {
+            flex-grow: 1;
+            text-align: left;
+            font-weight: normal;
+        }
+        
+        a {
+            padding: 10px;
+        }
+        
+        .nav--hamburger {
+            cursor: pointer;
+            padding: 10px;
+            
+            *{
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .navbar__nav {
         display: none;
     }
-
+    
+    .navbar--hamburger {
+        display: block;
+        text-align: center;
+    
+        .nav__link {
+            padding: 10px;
+        }
+    }
+    
     a {
         display: block;
         color: black;
@@ -24,13 +61,15 @@
             display: flex;
             position: relative;
             justify-content: flex-end;
-            margin: 0 20px;
             
             h2 {
                 padding: 10px 0;
                 position: absolute;
                 left: 50%;
-                font-weight: normal;
+            }
+            
+            .nav--hamburger {
+                display: none;
             }
         }
 
