@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import HomePage from "./pages/homePage";
 import LoginPage from "./pages/loginPage";
@@ -9,15 +9,22 @@ import ProductsPage from "./pages/productsPage";
 import RegisterPage from "./pages/registerPage";
 import ItemPage from "./pages/itemPage";
 import BasketPage from "./pages/basketPage";
-import StatutePage from "./pages/statutePage/statutePage";
-import ContactPage from "./pages/contactPage/contactPage";
+import StatutePage from "./pages/statutePage";
+import ContactPage from "./pages/contactPage"
+import OrderPage from "./pages/orderPage";
 
 import otherActions from './redux/other/actions'
+import ProtectedRoute from "./routes/protected";
 
 import "./App.scss";
+import MyAccountPage from "./pages/myAccountPage/myAccountPage";
 
 function App() {
     const dispatch = useDispatch()
+    
+    const user = useSelector(state => state.auth)
+    
+    console.log(user);
     
     useEffect(() => {
         dispatch(otherActions.searchDelivery())
@@ -33,7 +40,11 @@ function App() {
                     exact
                     restricted={false}
                     path="/shop_app/login"
-                    element={<LoginPage  />}
+                    element={
+                        <ProtectedRoute user={!user.isAuth}>
+                            <LoginPage  />
+                        </ProtectedRoute>
+                    }
                 />
                 <Route
                     exact
@@ -44,7 +55,11 @@ function App() {
                     exact
                     restricted={true}
                     path="/shop_app/register"
-                    element={<RegisterPage />}
+                    element={
+                        <ProtectedRoute user={!user.isAuth}>
+                            <RegisterPage />
+                        </ProtectedRoute>
+                    }
                 />
                 <Route
                     exact
@@ -58,6 +73,16 @@ function App() {
                 />
                 <Route exact path="/shop_app/card" element={<BasketPage />} />
                 <Route exact path="/shop_app/contact" element={<ContactPage />} />
+                <Route exact path="/shop_app/order" element={
+                    <ProtectedRoute user={user.isAuth}>
+                        <OrderPage />
+                    </ProtectedRoute>
+                } />
+                <Route exact path="/shop_app/myAccount" element={
+                    <ProtectedRoute user={user.isAuth}>
+                        <MyAccountPage />
+                    </ProtectedRoute>
+                } />
                 {/* <Route path="*">
                 <div>
                     <p>404 </p>

@@ -1,0 +1,46 @@
+@import '../../base';
+
+.orderPage {
+    @extend .page;
+    
+    .orderDetails {
+        padding: 0 10%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: flex-start;
+        
+        form {
+            grid-column:1/2;
+            margin: 20px;
+        }
+        
+        .orderDetails__rest {
+            grid-column: 2/3;
+            
+            .rest__window {
+                grid-column: 2/3;
+                margin: 20px;
+                padding: 15px 10px;
+                box-shadow: 0 0 2px 2px black;
+            }
+        }
+        
+        .orderDetails__summary {
+            text-align: center;
+            grid-column: 2/3;
+            margin: 20px;
+            padding: 15px 10px;
+            box-shadow: 0 0 2px 2px black;
+            
+            p {
+                padding: 5px 20px;
+                text-align: left;
+            }
+            
+            h3 {
+                padding: 5px 20px;
+                text-align: left;
+            }
+        }
+    }
+}

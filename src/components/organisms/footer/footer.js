@@ -30,7 +30,7 @@ const Footer = () => {
                 <div>
                     {
                         delivery && delivery.map(({label, identification}) => (
-                            <div key={label}>{identification}</div>
+                            <div key={identification}>{label}</div>
                         ))
                     }
                 </div>

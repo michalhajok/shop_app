@@ -6,7 +6,7 @@ const initialState = {
   isError: false,
   isLoading: false,
   isAuth: false,
-  username: "",
+  user: {},
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -17,16 +17,17 @@ export const authReducer = (state = initialState, action) => {
         isError: false,
         isLoading: true,
         isAuth: false,
-        username: "",
+        user: {},
       };
 
     case LOGIN_SUCCESS:
+        console.log(action);
       return {
         ...state,
         isError: false,
         isLoading: false,
         isAuth: true,
-        username: action.data.email,
+        user: action.data,
       };
 
     case LOGIN_FAILED:
@@ -35,7 +36,7 @@ export const authReducer = (state = initialState, action) => {
         isError: true,
         isLoading: false,
         isAuth: false,
-        username: "",
+        user: {},
       };
 
     case LOG_OUT:
@@ -44,7 +45,7 @@ export const authReducer = (state = initialState, action) => {
         isError: false,
         isLoading: false,
         isAuth: false,
-        username: "",
+        user: {},
       };
 
     default:

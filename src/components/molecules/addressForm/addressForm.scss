@@ -1,0 +1,39 @@
+
+.addressForm {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+    .inputBox {
+        flex-basis: 100%;
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+        border: 1px solid black;
+        border-color: black;
+        border-radius: 5px;
+        margin: 10px;
+        padding: 5px;
+        
+        label {
+            position: absolute;
+            top: -10px;
+            left: 5px;
+            padding: 0 5px;
+            background-color: white;
+        }
+        
+        input {
+            flex-basis: 100%;
+            border: none;
+            outline: none;
+            padding: 8px;
+        }
+    }
+    
+    .--inputNumber {
+        flex-basis: 45%;
+    }
+}
+
+

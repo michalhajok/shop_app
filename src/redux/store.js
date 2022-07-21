@@ -8,6 +8,7 @@ import { basketReducer } from "./basket/reducer";
 import { authReducer } from "./auth/reducer";
 import { brandReducer } from "./brands/reducer";
 import { otherReducer } from "./other/reducer"
+import { orderReducer } from "./order/reducer";
 
 const rootReducer = combineReducers({
     products: productsReducer,
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
     auth: authReducer,
     brands: brandReducer,
     other: otherReducer,
+    order: orderReducer
 });
 
 export const store = createStore(

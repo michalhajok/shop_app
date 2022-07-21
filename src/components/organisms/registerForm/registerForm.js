@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { useNavigate } from "react-router";
+
 import Button from "../../atoms/button";
 
 import "./registerForm.scss";
@@ -10,13 +12,13 @@ const RegisterForm = () => {
         password: "",
         name: "",
         lastname: "",
-        sex: "",
+        sex: "men",
         birthday: "",
         phone: "",
-        city: "",
-        address: "",
     });
 
+    const history = useNavigate()
+    
     const handleUser = (e) => {
         setUser({
         ...user,
@@ -24,19 +26,30 @@ const RegisterForm = () => {
         });
     };
 
-    const addUser = (e) => {
+    const addUser = async (e) => {
         e.preventDefault();
+        
+        const res = await fetch('https://shopappbackend.herokuapp.com/user/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },     
+            body: JSON.stringify(user)
+        })
+        
         setUser({
         email: "",
         password: "",
         name: "",
         lastname: "",
-        sex: "",
+        sex: "men",
         birthday: "",
         phone: "",
-        city: "",
-        address: "",
         });
+        
+        if(res.ok) {
+            history('/shop_app')
+        }
     };
 
     const {
@@ -47,8 +60,6 @@ const RegisterForm = () => {
         sex,
         birthday,
         phone,
-        city,
-        address,
     } = user;
 
     return (
@@ -86,7 +97,6 @@ const RegisterForm = () => {
                 <input
                     placeholder="name"
                     autoComplete="off"
-                    pattern="[A-Za-z]"
                     required
                     name="name"
                     type="text"
@@ -99,7 +109,6 @@ const RegisterForm = () => {
                 <input
                     placeholder="last name"
                     autoComplete="off"
-                    pattern="[A-Za-z]"
                     required
                     name="lastname"
                     type="text"
@@ -119,7 +128,6 @@ const RegisterForm = () => {
                 <input
                     placeholder="birthday"
                     autoComplete="off"
-                    required
                     name="birthday"
                     type="date"
                     value={birthday}
@@ -137,31 +145,6 @@ const RegisterForm = () => {
                     maxLength="12"
                     minLength="7"
                     value={phone}
-                    onChange={handleUser}
-                />
-                </label>
-                <label>
-                <p>City:</p>
-                <input
-                    placeholder="city"
-                    autoComplete="off"
-                    pattern="[A-Za-z]"
-                    required
-                    name="city"
-                    type="text"
-                    value={city}
-                    onChange={handleUser}
-                />
-                </label>
-                <label>
-                <p>Address:</p>
-                <input
-                    placeholder="address"
-                    autoComplete="off"
-                    required
-                    name="address"
-                    type="text"
-                    value={address}
                     onChange={handleUser}
                 />
                 </label>

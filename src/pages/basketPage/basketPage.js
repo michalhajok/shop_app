@@ -1,23 +1,29 @@
-import React, {useState, useEffect, useCallback} from "react";
+import React, {useState, useEffect } from "react";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import Nav from "../../components/organisms/nav";
 import BasketItem from "../../components/molecules/basketItem";
 import Button from '../../components/atoms/button'
 import Footer from "../../components/organisms/footer";
+import actions from "../../redux/order/actions";
 
 import "./basketPage.scss";
 
 const BasketPage = () => {
-    const _basket = useSelector((state) => state.basket);
     const [price, setPrice] = useState(0)
     const [delivery, setDelivery] = useState(0)
     const [discount, setDiscount] = useState(0)
     const [amount, setAmount] = useState(0)
     const [discountCode, setDiscountCode] = useState("")
 
+    const _basket = useSelector((state) => state.basket);
     const basket = _basket.basket
+    
+    const dispatch = useDispatch()
+    
+    const navigate = useNavigate()
     
     const codes = [
         {code: 'code40', discount: 0.4},
@@ -33,6 +39,20 @@ const BasketPage = () => {
             ))
         
     )
+    
+    const handleOrder = async () => {
+        await dispatch(actions.addItemsToOrder({
+            items: basket,
+            price: {
+                price: price,
+                deliveryPrice: delivery,
+                discountPrice: discount,
+                amount: amount
+            }
+        }))
+        navigate('/shop_app/order')
+        
+    }
     
     useEffect(() => {
         let a = 0
@@ -76,7 +96,7 @@ const BasketPage = () => {
                         <h4>Amount: </h4>
                         <h4>{amount} zł</h4>
                     </article>
-                    <Button>Checkout</Button>
+                    <Button click={handleOrder}>Checkout</Button>
                 </div>
                 <div className="basket__discount">
                     <input 

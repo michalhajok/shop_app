@@ -7,27 +7,26 @@ const loginFailed = () => ({ type: LOGIN_FAILED });
 const loginSuccess = (data) => ({ type: LOGIN_SUCCESS, data });
 const logout = () => ({ type: LOG_OUT });
 
-const login = (data, red) => {
-  return function (dispatch) {
-    dispatch(loginRequest());
-    fetch("https://shopappbackend.herokuapp.com/user/login", {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(data),
-    })
-      .then((res) => {
-        if (res.ok) {
-          dispatch(loginSuccess(data));
-          red.push("/shop_app");
-        } else {
-          dispatch(loginFailed());
-        }
-      })
-      .catch((err) => dispatch(loginFailed()));
-  };
+const login =  (user, navigate) => {
+    return async  (dispatch) => {
+        dispatch(loginRequest());
+        const res = await fetch("https://shopappbackend.herokuapp.com/user/login", {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: JSON.stringify(user),
+        })
+        const data = await res.json()
+                if (res.ok) {
+                    console.log(data);
+                dispatch(loginSuccess(data));
+                navigate("/shop_app");
+                } else {
+                dispatch(loginFailed());
+                }
+        };
 };
 
 export default {

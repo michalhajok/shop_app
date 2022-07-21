@@ -1,0 +1,35 @@
+@import '../../base';
+
+.myAccountPage {
+    @extend .page;
+    
+    .account {
+        display: grid;
+        align-items: start;
+        grid-template-rows: auto 1fr;
+        padding: 20px 20%;
+        
+        .accountDetails {
+            height: fit-content;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .accountOther {
+            width: 100%;
+            
+            .tabs {
+                display: flex;
+                
+                div {
+                    padding: 10px;
+                    border-bottom: 2px solid white;
+                }
+                
+                .activeTab {
+                    border-color: black;
+                }
+            }
+        }
+    }
+}

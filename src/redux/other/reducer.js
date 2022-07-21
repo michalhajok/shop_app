@@ -9,7 +9,11 @@ const {
 const initialState = {
     isLoading: false,
     delivery: [],
-    payments: []
+    payments: [],
+    discountCodes: [
+        {code: 'code40', discount: 0.4},
+        {code: 'code30', discount: 0.3}
+    ]
 }
 
 export const otherReducer = (state = initialState, { type, payload }) => {
