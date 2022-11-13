@@ -16,7 +16,10 @@ const getOrders = (user) => {
     return async dispatch => {
         dispatch(fetchOrders())
         try {
-            const res = await fetch(`https://shopappbackend.herokuapp.com/orders/${user}`)
+            const res = await fetch(`https://shopbackend-michalhajok.vercel.apporders/${user}`, {
+                method: 'GET',
+                cors: 'no-cors'
+            })
             const data = await res.json()
             dispatch(fetchOrdersSuccess(data))
         } catch (error) {

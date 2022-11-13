@@ -11,7 +11,7 @@ const brandsSuccess = (data) => ({
 const fetchData = () => {
   return (dispatch) => {
     dispatch(brandsFetch());
-    fetch("https://shopappbackend.herokuapp.com/categories")
+    fetch("https://shopbackend-michalhajok.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => dispatch(brandsSuccess(data)))
       .catch((err) => dispatch(brandsFailed()));
@@ -21,7 +21,7 @@ const fetchData = () => {
 const addBrand = (data) => {
   return (dispatch) => {
     dispatch(brandsFetch());
-    fetch("https://shopappbackend.herokuapp.com/categories/add", {
+    fetch("https://shopbackend-michalhajok.vercel.app/categories/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

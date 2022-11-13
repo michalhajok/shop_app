@@ -13,7 +13,10 @@ const fetchPayments = data => ({type: FETCH_PAYMENTS, payload: data})
 const searchDelivery = () => {
     return async dispatch => {
         dispatch(fetchLoading())
-        const res = await fetch('https://shopappbackend.herokuapp.com/delivery')
+        const res = await fetch('https://shopbackend-michalhajok.vercel.app/delivery', {
+            method: 'GET',
+            cors: 'cors'
+        })
         const data = await res.json()
         dispatch(fetchDelivery(data))
     }
@@ -22,7 +25,10 @@ const searchDelivery = () => {
 const searchPayments = () => {
     return async dispatch => {
         dispatch(fetchLoading())
-        const res = await fetch('https://shopappbackend.herokuapp.com/payments')
+        const res = await fetch('https://shopbackend-michalhajok.vercel.app/payments', {
+            method: 'GET',
+            cors: 'cors'
+        })
         const data = await res.json()
         dispatch(fetchPayments(data))
     }

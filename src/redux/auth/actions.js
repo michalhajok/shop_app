@@ -10,7 +10,7 @@ const logout = () => ({ type: LOG_OUT });
 const login =  (user, navigate) => {
     return async  (dispatch) => {
         dispatch(loginRequest());
-        const res = await fetch("https://shopappbackend.herokuapp.com/user/login", {
+        const res = await fetch("https://shopbackend-michalhajok.vercel.app/user/login", {
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
