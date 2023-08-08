@@ -1,8 +1,8 @@
-@import "../../../base";
+@import '../../../base';
 
 .dropdown {
     position: relative;
-    font-size: 16px;    
+    font-size: 16px;
     background-color: white;
 
     .dropdown__title {
@@ -39,16 +39,16 @@
         position: relative;
 
         .dropdown__title {
-        display: block;
+            display: block;
         }
 
         .dropdown__content {
-        display: none;
-        z-index: 100;
-        position: absolute;
+            display: none;
+            z-index: 100;
+            position: absolute;
         }
     }
-    
+
     .dropdown:hover .dropdown__content {
         width: 100%;
         display: flex;

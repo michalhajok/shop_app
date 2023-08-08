@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 import "./productItem.scss";
 
-const ProductItem = ({ product }) => {
+function ProductItem({ product }) {
     const { _id, title, brand, price, picture } = product;
     const params = useParams();
     
@@ -26,6 +26,6 @@ const ProductItem = ({ product }) => {
             </div>
         </Link>
     );
-};
+}
 
 export default ProductItem;

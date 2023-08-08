@@ -6,12 +6,12 @@ import RegisterForm from "../../components/organisms/registerForm/registerForm";
 
 import "./registerPage.scss";
 
-const RegisterPage = () => (
-    <div className="registerPage">
+function RegisterPage() {
+  return <div className="registerPage">
         <Nav />
         <RegisterForm />
         <Footer />
     </div>
-);
+}
 
 export default RegisterPage;

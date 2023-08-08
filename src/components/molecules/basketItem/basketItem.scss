@@ -1,4 +1,4 @@
-@import "../../../base";
+@import '../../../base';
 
 .basketItem {
     display: flex;
@@ -9,7 +9,7 @@
         flex-basis: 30%;
 
         img {
-        width: 100%;
+            width: 100%;
         }
     }
 
@@ -24,16 +24,16 @@
         article {
             display: flex;
             padding: 5px 0;
-            
+
             svg {
                 cursor: pointer;
             }
-            
+
             .basketItem--quantity {
                 margin: 0 10px;
                 display: flex;
                 align-items: center;
-                
+
                 * {
                     margin: 0 5px;
                 }
@@ -45,12 +45,12 @@
             color: $coral;
         }
     }
-    }
+}
 
-    @media (min-width: 700px) {
+@media (min-width: 700px) {
     .basketItem {
         .basketItem__figure {
-        flex-basis: 10%;
+            flex-basis: 10%;
         }
     }
 }

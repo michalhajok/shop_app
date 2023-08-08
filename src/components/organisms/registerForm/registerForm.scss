@@ -8,7 +8,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        
+
         h2 {
             font-weight: normal;
             padding: 10px 0;
@@ -29,10 +29,11 @@
                 font-weight: normal;
             }
 
-            input, select {
+            input,
+            select {
                 -webkit-appearance: none;
                 -moz-appearance: textfield;
-                color:  rgb(61, 58, 53);
+                color: rgb(61, 58, 53);
                 border: none;
                 background: none;
                 font-size: 16px;
@@ -42,7 +43,7 @@
             }
 
             input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button{
+            input::-webkit-inner-spin-button {
                 -webkit-appearance: none;
             }
         }
@@ -54,7 +55,7 @@
                 color: $hover;
             }
 
-            input{
+            input {
                 background: none;
                 border: none;
                 outline: none;
@@ -63,11 +64,9 @@
     }
 }
 
-@media (min-width: 700px){
+@media (min-width: 700px) {
     .registerPage__registerForm {
-    
         .registerForm--form {
-    
             label {
                 margin: 12px;
             }

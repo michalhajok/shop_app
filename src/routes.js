@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export const PrivateRoute = ({ element: Component, ...rest }) => {
+export function PrivateRoute({ element: Component, ...rest }) {
     const auth = useSelector((state) => state.auth);
 
     return (
@@ -17,14 +17,14 @@ export const PrivateRoute = ({ element: Component, ...rest }) => {
         }
         />
     );
-};
+}
 
-export const PublicRoute = ({
+export function PublicRoute({
     element: Component,
     exact,
     restricted,
     ...rest
-    }) => {
+    }) {
     const auth = useSelector((state) => state.auth.isAuth);
 
     return (
@@ -36,4 +36,4 @@ export const PublicRoute = ({
         }
         />
     );
-};
+}

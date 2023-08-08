@@ -1,44 +1,41 @@
-import types from './types'
+import types from './types';
 
-const {
-    FETCH_LOADING,
-    FETCH_DELIVERY,
-    FETCH_PAYMENTS
-} = types
+const { FETCH_LOADING, FETCH_DELIVERY, FETCH_PAYMENTS } = types;
 
 const initialState = {
     isLoading: false,
     delivery: [],
     payments: [],
     discountCodes: [
-        {code: 'code40', discount: 0.4},
-        {code: 'code30', discount: 0.3}
-    ]
-}
+        { code: 'code40', discount: 0.4 },
+        { code: 'code30', discount: 0.3 },
+    ],
+};
 
-export const otherReducer = (state = initialState, { type, payload }) => {
+const otherReducer = (state = initialState, { type, payload }) => {
     switch (type) {
+        case FETCH_LOADING:
+            return {
+                ...state,
+                isLoading: true,
+            };
 
-    case FETCH_LOADING:
-        return { 
-            ...state, 
-            isLoading: true
-        }
+        case FETCH_DELIVERY:
+            return {
+                ...state,
+                isLoading: false,
+                delivery: payload,
+            };
+        case FETCH_PAYMENTS:
+            return {
+                ...state,
+                isLoading: false,
+                payments: payload,
+            };
 
-    case FETCH_DELIVERY:
-        return { 
-            ...state, 
-            isLoading: false,
-            delivery: payload
-        }
-    case FETCH_PAYMENTS:
-        return { 
-            ...state, 
-            isLoading: false,
-            payments: payload
-        }
-        
         default:
-        return state
+            return state;
     }
-}
+};
+
+export default otherReducer;

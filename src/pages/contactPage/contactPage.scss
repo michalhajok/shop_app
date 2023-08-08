@@ -2,28 +2,27 @@
 
 .contactPage {
     @extend .page;
-    
+
     .contactPage__content {
         text-align: center;
         padding: 50px 5%;
-        
+
         h2 {
             font-weight: normal;
         }
-        
+
         .contactPage--form {
-            
             .boxInput {
                 display: flex;
                 flex-wrap: wrap;
                 margin: 15px 10px;
-                
+
                 label {
                     padding: 5px 0;
                     flex-basis: 100%;
                     text-align: left;
                 }
-                
+
                 input {
                     flex-basis: 100%;
                     outline: none;
@@ -33,7 +32,7 @@
                     border: solid 1px black;
                     box-shadow: 1px 1px 3px black;
                 }
-                
+
                 textarea {
                     flex-basis: 100%;
                     min-height: 150px;
@@ -43,18 +42,17 @@
                     border: solid 1px black;
                     box-shadow: 1px 1px 3px black;
                 }
-                
+
                 &:focus-within {
-                    
                     label {
                         color: $hover;
                     }
-                    
+
                     input {
                         border: solid 1px $hover;
                         box-shadow: 1px 1px 3px $hover;
                     }
-                    
+
                     textarea {
                         border: solid 1px $hover;
                         box-shadow: 1px 1px 3px $hover;
@@ -65,13 +63,10 @@
     }
 }
 
-@media (min-width: 800px) { 
+@media (min-width: 800px) {
     .contactPage {
-        
         .contactPage__content {
             padding: 50px 30%;
         }
     }
 }
-
-

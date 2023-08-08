@@ -6,7 +6,7 @@ import Nav from "../../components/organisms/nav"
 
 import './statutePage.scss'
 
-const StatutePage = () => {
+function StatutePage() {
     return (
         <div className="statutePage">
             <Nav />

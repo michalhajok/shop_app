@@ -5,7 +5,7 @@ import Footer from "../../components/organisms/footer";
 
 import "./homePage.scss";
 
-const HomePage = () => {
+function HomePage() {
     return (
         <div className="homePage">
         <Nav />
@@ -34,6 +34,6 @@ const HomePage = () => {
         <Footer />
         </div>
     );
-};
+}
 
 export default HomePage;

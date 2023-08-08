@@ -1,24 +1,29 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./itemFigure.scss";
+import './itemFigure.scss';
 
-const ItemFigure = ({ picture }) => {
-    const [image, setImage] = useState("");
+function ItemFigure({ picture: _picture }) {
+    const [image, setImage] = useState('');
 
     return (
-        <section className="itemPage__section--figures">
-        <figure className="figures__mini">
-            {picture.map((image) => (
-            <figure key={image}>
-                <img src={image} onMouseOver={() => setImage(image)} alt="img" />
+        <section className='itemPage__section--figures'>
+            <figure className='figures__mini'>
+                {_picture.map((picture) => (
+                    <figure key={picture}>
+                        <img
+                            src={picture}
+                            onMouseOver={() => setImage(image)}
+                            onFocus={() => {}}
+                            alt='img'
+                        />
+                    </figure>
+                ))}
             </figure>
-            ))}
-        </figure>
-        <figure className="figures__main">
-            <img src={image ? image : picture[0]} alt="img" />
-        </figure>
+            <figure className='figures__main'>
+                <img src={image || _picture[0]} alt='img' />
+            </figure>
         </section>
     );
-};
+}
 
 export default ItemFigure;

@@ -8,18 +8,18 @@
         grid-column: 1/4;
     }
 
-    .registerPage__registerForm{
+    .registerPage__registerForm {
         grid-column: 2/3;
     }
 
-    .footer{
+    .footer {
         align-self: end;
         grid-column: 1/4;
     }
 }
 
-@media (min-width: 600px){
-    .registerPage{
+@media (min-width: 600px) {
+    .registerPage {
         grid-template-columns: 1fr 1fr 1fr;
     }
 }

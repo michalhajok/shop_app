@@ -1,10 +1,9 @@
-@import "../../base";
+@import '../../base';
 
 .basketPage {
     @extend .page;
 
     .basketPage__basket {
-
         .basket__empty {
             padding: 1em 2em;
             text-align: center;
@@ -17,32 +16,32 @@
             .card__itemList {
                 flex-basis: 100%;
             }
-                
+
             .basket__summary {
                 width: 100%;
                 justify-self: center;
                 padding: 15px;
                 margin: 20px 10px;
-                box-shadow: 0 0 3px 1px black;                       
-                
+                box-shadow: 0 0 3px 1px black;
+
                 article {
                     display: flex;
                     justify-content: space-between;
                     margin: 5px 0;
                 }
             }
-            
+
             .basket__discount {
                 width: 100%;
                 justify-self: center;
                 padding: 15px;
                 box-shadow: 0 0 3px 1px black;
                 margin: 20px 10px;
-                
+
                 input {
                     padding-left: 8px;
                     height: 30px;
-                    width: 100%;    
+                    width: 100%;
                     border: solid 1px black;
                     outline: none;
                 }
@@ -61,27 +60,27 @@
             .basket__card {
                 padding: 5em;
                 grid-template-columns: 4fr 1fr;
-                grid-template-rows: auto auto 1fr ;
-                
+                grid-template-rows: auto auto 1fr;
+
                 .card__itemList {
                     grid-area: 1/1/4/2;
                     margin: 20px 40px;
                 }
-                
+
                 .basket__summary {
                     grid-area: 1/2/2/3;
                 }
-                
+
                 .basket__discount {
                     grid-area: 2/2/3/3;
                     // padding: 15px;
                     // box-shadow: 0 0 3px 1px black;
                     // margin: 20px 10px;
-                    
+
                     // input {
                     //     padding-left: 8px;
                     //     height: 30px;
-                    //     width: 100%;    
+                    //     width: 100%;
                     //     border: solid 1px black;
                     //     outline: none;
                     // }

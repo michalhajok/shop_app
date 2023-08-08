@@ -4,7 +4,7 @@ import ProductItem from "../../molecules/productItem";
 
 import "./productList.scss";
 
-const ProductList = ({ products }) => {
+function ProductList({ products }) {
     return (
         <div className="productList">
         {products.map((product) => (
@@ -12,6 +12,6 @@ const ProductList = ({ products }) => {
         ))}
         </div>
     );
-};
+}
 
 export default ProductList;

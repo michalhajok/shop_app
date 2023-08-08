@@ -1,23 +1,23 @@
 @import '../../base';
 
-.loginPage{
+.loginPage {
     @extend .page;
 
-    .loginPage--content{
+    .loginPage--content {
         display: grid;
         place-content: center;
         background-color: $background;
         grid-template-columns: 1fr 6fr 1fr;
 
-        .loginPage__header{
+        .loginPage__header {
             grid-column: 2/3;
             justify-self: center;
-            
-            h2{
+
+            h2 {
                 text-align: center;
                 font-weight: normal;
                 font-size: 36px;
-                margin: 0.7em 0 ;
+                margin: 0.7em 0;
                 color: black;
             }
         }
@@ -51,25 +51,25 @@
                 }
 
                 input::placeholder {
-                    color:  rgb(61, 58, 53);
+                    color: rgb(61, 58, 53);
                     opacity: 0.7;
-                } 
+                }
             }
 
             .form--loginInput:focus-within {
                 border-color: $hover;
-                
+
                 svg {
                     color: $hover;
                 }
             }
-    
-            .form--register{
+
+            .form--register {
                 width: 100%;
                 text-align: center;
                 margin-top: 10px;
-                
-                a{
+
+                a {
                     width: fit-content;
                     padding: 5px 10px;
                     font-weight: bold;
@@ -77,7 +77,7 @@
                     color: black;
                     border-bottom: solid 2px black;
                     transition: 0.2s all ease;
-                    
+
                     &:hover {
                         color: $hover;
                         border-color: $hover;
@@ -88,17 +88,17 @@
     }
 }
 
-@media (min-width: 600px){
-    .loginPage{
-        .loginPage--content{
+@media (min-width: 600px) {
+    .loginPage {
+        .loginPage--content {
             grid-template-columns: 1fr 2fr 1fr;
         }
     }
 }
 
-@media (min-width: 1000px){
-    .loginPage{
-        .loginPage--content{
+@media (min-width: 1000px) {
+    .loginPage {
+        .loginPage--content {
             grid-template-columns: 2fr 2fr 2fr;
         }
     }

@@ -1,68 +1,68 @@
-@import "../../../base";
+@import '../../../base';
 
 .adminItem__item {
-  grid-column: 1/4;
-  place-self: center;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  .item__picSection {
-    flex-basis: 100%;
-    margin: 2vh 0;
+    grid-column: 1/4;
+    place-self: center;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    figure {
-      flex-basis: 30%;
+    .item__picSection {
+        flex-basis: 100%;
+        margin: 2vh 0;
+        display: flex;
+        justify-content: space-around;
 
-      img {
+        figure {
+            flex-basis: 30%;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    p {
         width: 100%;
-      }
+        margin: 0.2em;
+        font-weight: normal;
+        color: $coral;
+
+        b {
+            color: black;
+        }
     }
-  }
 
-  p {
-    width: 100%;
-    margin: 0.2em;
-    font-weight: normal;
-    color: $coral;
+    .item__details {
+        flex-basis: 100%;
+    }
 
-    b {
+    .item__size {
+        flex-basis: 100%;
+    }
+
+    .item__change {
+        background: none;
+        outline: none;
+        text-align: center;
         color: black;
+        width: 30%;
+        margin: 1vh 0;
+        padding: 1vh 0;
+        border: solid 2px black;
     }
-  }
 
-  .item__details {
-    flex-basis: 100%;
-  }
+    .item__change:hover {
+        border-color: $coral;
+    }
 
-  .item__size {
-    flex-basis: 100%;
-  }
-
-  .item__change {
-    background: none;
-    outline: none;
-    text-align: center;
-    color: black;
-    width: 30%;
-    margin: 1vh 0;
-    padding: 1vh 0;
-    border: solid 2px black;
-  }
-
-  .item__change:hover {
-    border-color: $coral;
-  }
-
-  .item__change:active {
-    color: $coral;
-  }
+    .item__change:active {
+        color: $coral;
+    }
 }
 
 @media (min-width: 1400px) {
-  .adminItem__item {
-    grid-column: 2/3;
-  }
+    .adminItem__item {
+        grid-column: 2/3;
+    }
 }

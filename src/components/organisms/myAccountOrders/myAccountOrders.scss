@@ -1,29 +1,28 @@
-
 .accountOrders {
     .order {
         margin: 20px;
-        
+
         .order__details {
             display: flex;
             flex-wrap: wrap;
-            
+
             h3 {
                 flex-basis: 100%;
             }
-            
+
             div {
                 padding: 10px;
             }
         }
-        
+
         .order__itemList {
             display: flex;
             flex-wrap: wrap;
-            
+
             .itemList__item {
                 flex-basis: calc(25% - 20px);
                 margin: 10px;
             }
         }
     }
-}  
+}

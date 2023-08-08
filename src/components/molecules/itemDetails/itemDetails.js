@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 
-import Button from '../../atoms/button'
-import basketAction from "../../../redux/basket/actions";
+import Button from '../../atoms/button';
+import basketAction from '../../../redux/basket/actions';
 
-import "./itemDetails.scss";
+import './itemDetails.scss';
 
-const ItemDetails = ({ product }) => {
-    const { _id, title, description, brand, price, size, picture } = product;
+function ItemDetails({ product }) {
+    const { _id, title, description, brand, price, size: _size, picture } = product;
     const dispatch = useDispatch();
 
     const [item, setItem] = useState({
-        _id: _id,
-        title: title,
-        description: description,
-        brand: brand,
-        price: price,
-        size: size[0].size,
-        maxQuantity: size[0].quantity,
+        _id,
+        title,
+        description,
+        brand,
+        price,
+        size: _size[0].size,
+        maxQuantity: _size[0].quantity,
         quantity: 1,
-        picture: picture,
+        picture,
     });
 
     const addProduct = () => {
@@ -29,27 +29,26 @@ const ItemDetails = ({ product }) => {
 
     const changeSize = (e) => {
         setItem({
-        ...item,
-        _id: _id + e.target.value,
-        size: e.target.value,
-        quantity: 1,
-        maxQuantity:
-            size[size.findIndex(({ size }) => size === e.target.value)].quantity,
+            ...item,
+            _id: _id + e.target.value,
+            size: e.target.value,
+            quantity: 1,
+            maxQuantity: _size[_size.findIndex(({ size }) => size === e.target.value)].quantity,
         });
     };
 
     return (
-        <main className="itemPage__details">
-            <div className="details__caption">
+        <main className='itemPage__details'>
+            <div className='details__caption'>
                 <h2>{brand}</h2>
                 <h3>{title}</h3>
                 <b>{price} zł</b>
             </div>
             <select value={item.size} onChange={changeSize}>
-                {size.map(({ size, quantity }) => (
-                <option key={size} value={size} disabled={quantity === 0}>
-                    {size}
-                </option>
+                {_size.map(({ size, quantity }) => (
+                    <option key={size} value={size} disabled={quantity === 0}>
+                        {size}
+                    </option>
                 ))}
             </select>
             <Button click={addProduct}>
@@ -57,6 +56,6 @@ const ItemDetails = ({ product }) => {
             </Button>
         </main>
     );
-};
+}
 
 export default ItemDetails;

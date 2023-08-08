@@ -2,6 +2,8 @@ import React from "react";
 
 import './loader.scss'
 
-const LoaderExample = () => <div className="loader"></div>;
+function LoaderExample() {
+  return <div className="loader" />
+}
 
 export default LoaderExample;

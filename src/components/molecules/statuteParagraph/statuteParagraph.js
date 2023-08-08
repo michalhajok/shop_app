@@ -2,7 +2,7 @@ import React from 'react'
 
 import './statuteParagraph.scss'
 
-const StatuteParagraph = () => {
+function StatuteParagraph() {
     return (
         <section className="statuteParagraph">
             <h3>

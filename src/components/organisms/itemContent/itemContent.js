@@ -5,7 +5,7 @@ import ItemDetails from '../../molecules/itemDetails'
 
 import "./itemContent.scss";
 
-const ItemContent = ({ product }) => {
+function ItemContent({ product }) {
     const { picture } = product;
 
     return (
@@ -34,6 +34,6 @@ const ItemContent = ({ product }) => {
         </section>
         </div>
     );
-};
+}
 
 export default ItemContent;

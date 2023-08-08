@@ -5,11 +5,11 @@
     margin: 2%;
     font-size: 14px;
     color: black;
-    
+
     article {
         display: grid;
-        
-        p { 
+
+        p {
             padding: 0 5px;
             white-space: nowrap;
             overflow: hidden;
@@ -17,16 +17,15 @@
         }
     }
 
-    .productItem__image{
-
-        img{
+    .productItem__image {
+        img {
             width: 100%;
         }
     }
 }
 
-@media (min-width: 700px){
-    .productItem{
+@media (min-width: 700px) {
+    .productItem {
         flex-basis: 21%;
         margin: 2%;
     }

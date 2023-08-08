@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./dropdown.scss";
 
-const Dropdown = ({ list, to, title, className }) => {
+function Dropdown({ list, to, title, className }) {
     return (
         <div className={`dropdown ${className}`}>
             <div className="dropdown__title" >{title}</div>
@@ -16,6 +16,6 @@ const Dropdown = ({ list, to, title, className }) => {
             </div>
         </div>
     );
-};
+}
 
 export default Dropdown;

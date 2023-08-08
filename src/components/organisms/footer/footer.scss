@@ -1,6 +1,6 @@
 @import '../../../base';
 
-.footer{
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -8,78 +8,76 @@
     text-align: center;
     padding: 1.2em;
     width: 100%;
-    
+
     * {
         color: white;
     }
-    
+
     .footer__menu {
         flex-basis: 100%;
         padding: 15px;
-        
+
         a {
             margin: 5px 0;
-            display: block;  
+            display: block;
         }
     }
-    
+
     .footer__payments {
         flex-basis: 100%;
         padding: 15px;
-        
+
         * {
             display: block;
         }
     }
-    
+
     .footer__delivery {
         flex-basis: 100%;
         padding: 15px;
-        
+
         * {
             display: block;
         }
     }
-    
+
     .footer_socials {
         flex-basis: 100%;
         padding: 15px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        
+
         h2 {
             font-weight: normal;
             flex-basis: 100%;
             cursor: default;
         }
-        
+
         * {
             cursor: pointer;
         }
     }
 }
 
-@media (min-width: 800px) { 
-    .footer{
+@media (min-width: 800px) {
+    .footer {
         flex-wrap: nowrap;
         justify-content: space-around;
-        
+
         a {
             text-align: left;
         }
-        
+
         .footer__payments {
-            
             * {
-                text-align: left;    
+                text-align: left;
             }
         }
-        
+
         .footer__delivery {
-            
             * {
-                text-align: left;    
+                text-align: left;
             }
         }
     }

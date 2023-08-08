@@ -1,4 +1,4 @@
-@import "../../base";
+@import '../../base';
 
 .productsPage {
     @extend .page;
@@ -7,7 +7,7 @@
         background-color: $background;
 
         a {
-        color: black;
+            color: black;
         }
     }
 }

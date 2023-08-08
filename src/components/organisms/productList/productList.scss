@@ -1,11 +1,11 @@
-.productList{
+.productList {
     display: flex;
     flex-wrap: wrap;
     margin: 0 5%;
 }
 
-@media (min-width: 700px){
-    .productList{
+@media (min-width: 700px) {
+    .productList {
         padding: 50px 0;
         margin: 0 15%;
     }

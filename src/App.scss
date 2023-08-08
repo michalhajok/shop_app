@@ -1,4 +1,4 @@
-@import "./base";
+@import './base';
 
 * {
     box-sizing: border-box;
@@ -10,7 +10,8 @@
     cursor: default;
 }
 
-a, button {
+a,
+button {
     cursor: pointer;
 }
 
@@ -35,7 +36,7 @@ body {
         width: 5px;
         background-color: rgb(201, 201, 201);
     }
-    
+
     &::-webkit-scrollbar-thumb {
         background-color: rgb(87, 92, 92);
         border-radius: 5px;

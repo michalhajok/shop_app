@@ -11,7 +11,7 @@ import Footer from "../../components/organisms/footer";
 
 import "./productsPage.scss";
 
-const ProductsPage = () => {
+function ProductsPage() {
     const params = useParams();
     const reducer = useSelector((state) => state.products);
     const { products, isLoading } = reducer;
@@ -30,6 +30,6 @@ const ProductsPage = () => {
         <Footer />
         </div>
     );
-};
+}
 
 export default ProductsPage;
